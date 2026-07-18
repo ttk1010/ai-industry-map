@@ -1,0 +1,277 @@
+/* ===================================================================
+   AI Industry Map — deck framework
+   16:9 letterboxed canvas + drill-down navigation chrome.
+   Palette is a placeholder (cartographic/parchment) — revisit once the
+   overall "mood" direction is decided; layout/nav mechanics are stable.
+   =================================================================== */
+
+:root {
+  --bg: #EDE6D6;
+  --chrome-bg: #DCD3BE;
+  --surface: #F8F3E6;
+  --surface-raised: #FFFDF7;
+  --ink: #20180F;
+  --ink-soft: rgba(32, 24, 15, 0.62);
+  --ink-faint: rgba(32, 24, 15, 0.38);
+  --hairline: rgba(32, 24, 15, 0.18);
+  --hairline-strong: rgba(32, 24, 15, 0.32);
+  --accent-brass: #9C7128;
+  --accent-teal: #2F5854;
+  --accent-coral: #A8431F;
+  --pin-updated: var(--accent-brass);
+  --pin-stable: var(--accent-teal);
+  --pin-watch: var(--accent-coral);
+  --font-display: ui-serif, "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: ui-monospace, "SF Mono", "Cascadia Code", "Consolas", monospace;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #101A2C; --chrome-bg: #0A121F; --surface: #16233B; --surface-raised: #1C2C48;
+    --ink: #ECE6D6; --ink-soft: rgba(236,230,214,0.66); --ink-faint: rgba(236,230,214,0.4);
+    --hairline: rgba(236,230,214,0.16); --hairline-strong: rgba(236,230,214,0.3);
+    --accent-brass: #D9A857; --accent-teal: #74AFA8; --accent-coral: #E1815A;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #101A2C; --chrome-bg: #0A121F; --surface: #16233B; --surface-raised: #1C2C48;
+  --ink: #ECE6D6; --ink-soft: rgba(236,230,214,0.66); --ink-faint: rgba(236,230,214,0.4);
+  --hairline: rgba(236,230,214,0.16); --hairline-strong: rgba(236,230,214,0.3);
+  --accent-brass: #D9A857; --accent-teal: #74AFA8; --accent-coral: #E1815A;
+}
+:root[data-theme="light"] {
+  --bg: #EDE6D6; --chrome-bg: #DCD3BE; --surface: #F8F3E6; --surface-raised: #FFFDF7;
+  --ink: #20180F; --ink-soft: rgba(32,24,15,0.62); --ink-faint: rgba(32,24,15,0.38);
+  --hairline: rgba(32,24,15,0.18); --hairline-strong: rgba(32,24,15,0.32);
+  --accent-brass: #9C7128; --accent-teal: #2F5854; --accent-coral: #A8431F;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; }
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--chrome-bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+}
+
+/* ---- chrome: breadcrumbs ---- */
+.crumbs {
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 14px clamp(16px, 3vw, 32px) 0;
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  letter-spacing: 0.04em;
+  color: var(--ink-soft);
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.crumbs a { color: var(--ink-soft); text-decoration: none; border-bottom: 1px dotted var(--hairline-strong); }
+.crumbs a:hover { color: var(--ink); }
+.crumbs .sep { opacity: 0.5; }
+.crumbs .current { color: var(--ink); font-weight: 600; }
+
+/* ---- 16:9 letterboxed frame ---- */
+.stage-outer {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px clamp(12px, 2.5vw, 28px);
+  min-height: 0;
+}
+
+.deck-frame {
+  width: min(94vw, 1400px, calc((100vh - 150px) * 16 / 9));
+  aspect-ratio: 16 / 9;
+  container-type: size;
+  container-name: slide;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  background: var(--bg);
+  border: 1px solid var(--hairline-strong);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.22);
+}
+
+.deck-frame:fullscreen { width: 100vw; height: 100vh; border-radius: 0; }
+
+/* ---- pages fill the frame exactly ---- */
+.page {
+  position: absolute;
+  inset: 0;
+  display: none;
+  flex-direction: column;
+  padding: 5cqh 5cqw;
+  overflow: hidden;
+}
+.page.active { display: flex; animation: rise 0.22s ease; }
+@keyframes rise { from { opacity: 0; transform: translateY(1.2cqh); } to { opacity: 1; transform: translateY(0); } }
+@media (prefers-reduced-motion: reduce) { .page.active { animation: none; } }
+
+/* ---- illustrated area/overview backgrounds -----------------------------
+   One static image per area (or one for the overview "world map"), never
+   regenerated for routine data updates. A scrim + glass panels keep text
+   legible regardless of theme toggle, so these override the light/dark
+   tokens deliberately — the illustration sets its own mood. */
+.page[data-has-bg] {
+  background-size: cover;
+  background-position: center;
+}
+.page[data-has-bg]::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(10, 8, 4, 0.32), rgba(10, 8, 4, 0) 38%, rgba(10, 8, 4, 0) 60%, rgba(10, 8, 4, 0.3));
+  pointer-events: none;
+}
+.page.detail[data-has-bg]::before {
+  background: linear-gradient(180deg, rgba(10, 8, 4, 0.4), rgba(10, 8, 4, 0.16) 32%, rgba(10, 8, 4, 0.48));
+}
+.page[data-has-bg] > * { position: relative; z-index: 1; }
+.page[data-has-bg] .title,
+.page[data-has-bg] .lede,
+.page[data-has-bg] .meta {
+  color: #fff;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.4);
+}
+.page[data-has-bg] .tile,
+.page[data-has-bg] .pcard,
+.page[data-has-bg] .factbox {
+  background: color-mix(in srgb, var(--surface) 78%, transparent);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+.page[data-has-bg] .related a {
+  background: color-mix(in srgb, var(--surface-raised) 70%, transparent);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.page h1.title {
+  font-family: var(--font-display);
+  font-size: clamp(20px, 4.4cqw, 42px);
+  font-weight: 500;
+  margin: 0 0 0.4cqh;
+  letter-spacing: 0.01em;
+  text-wrap: balance;
+}
+.page p.lede {
+  font-size: clamp(11px, 1.5cqw, 15px);
+  color: var(--ink-soft);
+  margin: 0 0 2.4cqh;
+  max-width: 62ch;
+  line-height: 1.5;
+}
+
+/* ---- tile / product-card grid (overview + area pages) ---- */
+.tiles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20cqw, 1fr));
+  align-content: start;
+  gap: 1.6cqw;
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+}
+.tile, .pcard {
+  background: var(--surface);
+  border: 1px solid var(--hairline);
+  border-radius: 6px;
+  padding: 1.6cqh 1.6cqw;
+  text-align: left;
+  cursor: pointer;
+  font-family: inherit;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6cqh;
+  transition: transform 0.15s ease, border-color 0.15s ease;
+}
+.tile:hover, .pcard:hover { transform: translateY(-2px); border-color: var(--hairline-strong); }
+.tile:disabled { opacity: 0.45; cursor: not-allowed; }
+.tile:disabled:hover { transform: none; }
+.tile:focus-visible, .pcard:focus-visible, .navbtn:focus-visible, .crumbs a:focus-visible, .related a:focus-visible {
+  outline: 2px solid var(--accent-teal); outline-offset: 2px;
+}
+
+.badge-icon {
+  width: 3.6cqw; height: 3.6cqw; min-width: 34px; min-height: 34px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-display); font-weight: 600;
+  font-size: clamp(13px, 1.7cqw, 20px);
+  color: #fff;
+  flex: none;
+  background-size: cover;
+  background-position: center;
+}
+.tile h3, .pcard h3 { font-family: var(--font-display); font-size: clamp(14px, 2cqw, 22px); margin: 0; font-weight: 500; }
+.tile p, .pcard p.desc { font-size: clamp(10px, 1.25cqw, 13px); color: var(--ink-soft); margin: 0; line-height: 1.5; }
+.go-label { font-family: var(--font-mono); font-size: clamp(9px, 1cqw, 11px); color: var(--ink-faint); text-transform: uppercase; letter-spacing: 0.05em; }
+
+.pin-row { display: flex; align-items: center; gap: 6px; }
+.pin { width: 8px; height: 8px; border-radius: 50%; flex: none; }
+.pin.updated { background: var(--pin-updated); }
+.pin.stable { background: var(--pin-stable); }
+.pin.watch { background: var(--pin-watch); }
+.pin-label { font-family: var(--font-mono); font-size: clamp(8.5px, 0.95cqw, 10.5px); text-transform: uppercase; letter-spacing: 0.05em; color: var(--ink-faint); }
+
+/* ---- detail page ---- */
+.detail-head { display: flex; align-items: center; gap: 1.4cqw; margin-bottom: 1.6cqh; }
+.detail-head .badge-icon { width: 7cqw; height: 7cqw; min-width: 56px; min-height: 56px; font-size: clamp(18px, 3cqw, 30px); }
+.detail-head .meta { font-family: var(--font-mono); font-size: clamp(9px, 1cqw, 11px); color: var(--ink-faint); text-transform: uppercase; letter-spacing: 0.06em; }
+.detail-head h1.title { margin: 0; }
+
+.factbox {
+  background: var(--surface-raised);
+  border: 1px solid var(--hairline-strong);
+  border-radius: 6px;
+  padding: 1.2cqh 1.4cqw;
+  font-size: clamp(10px, 1.2cqw, 13px);
+  color: var(--ink-soft);
+  margin-top: 0.6cqh;
+}
+.factbox .row { display: flex; justify-content: space-between; gap: 12px; padding: 0.4cqh 0; border-bottom: 1px dashed var(--hairline); font-family: var(--font-mono); font-size: clamp(9.5px, 1cqw, 11.5px); }
+.factbox .row:last-child { border-bottom: none; }
+.factbox .row span:first-child { color: var(--ink-faint); }
+
+.related { display: flex; gap: 0.7cqw; margin-top: 1.4cqh; flex-wrap: wrap; }
+.related a {
+  font-family: var(--font-mono);
+  font-size: clamp(9.5px, 1cqw, 11px);
+  color: var(--ink-soft);
+  border: 1px solid var(--hairline);
+  border-radius: 999px;
+  padding: 0.5cqh 1cqw;
+  text-decoration: none;
+}
+.related a:hover { border-color: var(--hairline-strong); color: var(--ink); }
+
+/* ---- bottom bar (outside the 16:9 frame — not part of the "slide") ---- */
+.bottombar {
+  border-top: 1px solid var(--hairline-strong);
+  background: var(--chrome-bg);
+  padding: 8px clamp(16px, 3vw, 32px) 12px;
+}
+.bottombar-inner { max-width: 1400px; margin: 0 auto; display: flex; align-items: center; justify-content: center; gap: 14px; }
+.navbtn {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  background: transparent;
+  border: 1px solid var(--hairline-strong);
+  color: var(--ink-soft);
+  padding: 7px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+}
+.navbtn:hover:not(:disabled) { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+.navbtn:disabled { opacity: 0.35; cursor: default; }
+.page-index { font-family: var(--font-mono); font-size: 11px; color: var(--ink-faint); min-width: 15ch; text-align: center; }

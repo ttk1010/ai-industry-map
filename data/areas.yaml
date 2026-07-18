@@ -1,0 +1,58 @@
+# Top-level areas of the industry map.
+# Each area becomes one "area page" listing its member characters
+# (defined in characters.yaml via matching `category`).
+# `order` controls both the overview page tile order and the linear
+# prev/next presentation order.
+#
+# `background_path` / `background_prompt`: one illustrated backdrop per
+# AREA (not per product, not per news update) — regenerate only if the
+# world/theme for that area itself changes. Detail pages for the
+# products inside an area reuse the same background image.
+#
+# Shared background art direction (repeat as a prefix when generating):
+#   Wide flat-color illustrated background scene, warm inviting storybook
+#   style, soft painterly shading, gentle depth with layered midground and
+#   background elements, no characters, no people, no text, no logos, soft
+#   diffused lighting, slightly whimsical and cheerful mood, 16:9 landscape
+#   composition with open sky in the upper portion.
+
+- id: models
+  order: 1
+  title: AIモデル
+  world_name: AI頭脳学園
+  subtitle: 基盤モデルの現在地
+  lede: 各社の基盤モデル。カードの色はニュース連動ステータス（更新あり/安定/要ウォッチ）を示す。
+  background_path: assets/backgrounds/models.png
+  generated_with: ""
+  background_prompt: |
+    Wide flat-color illustrated background scene, warm inviting storybook
+    style, soft painterly shading, gentle depth with layered midground and
+    background elements, no characters, no people, no text, no logos, soft
+    diffused lighting, slightly whimsical and cheerful mood, 16:9 landscape
+    composition with open sky in the upper portion.
+    A cheerful fantasy academy campus at golden afternoon light:
+    round-towered school buildings with warm cream and terracotta walls,
+    arched windows glowing softly, a cobblestone courtyard in the
+    foreground, small hedges and lantern posts, floating soft light
+    particles suggesting knowledge, distant rolling hills under a pastel
+    sky.
+
+- id: devtools
+  order: 2
+  title: 開発環境
+  world_name: AI開発者タウン
+  subtitle: コーディングエージェント／IDEの現在地
+  lede: モデルの力を実際の開発作業に変換するツール群。
+  background_path: assets/backgrounds/devtools.png
+  generated_with: ""
+  background_prompt: |
+    Wide flat-color illustrated background scene, warm inviting storybook
+    style, soft painterly shading, gentle depth with layered midground and
+    background elements, no characters, no people, no text, no logos, soft
+    diffused lighting, slightly whimsical and cheerful mood, 16:9 landscape
+    composition with open sky in the upper portion.
+    A cozy artisan workshop town street at dusk: a row of small
+    guild-hall buildings with wooden beams, warm glowing shopfront
+    windows, hanging signboards, cobblestone street, scattered tool and
+    gear-shaped decorations, string lights overhead, a faint forge glow
+    suggesting builders at work.

@@ -1,0 +1,236 @@
+# One entry per product. `category` must match an `id` in areas.yaml.
+# `image_path` is where you save the ChatGPT (GPT Image 2) output — until
+# that file exists, the generator falls back to a plain color+initial disc.
+# `prompt` is kept here so any character can be regenerated or tweaked later
+# without re-deriving the art direction from scratch.
+#
+# Shared art direction (repeated as a prefix in every prompt so each
+# generation call is self-contained and can be pasted individually):
+#   Flat-shaded chibi mascot character illustration. A soft, rounded,
+#   fluffy cloud/brain-shaped creature body with thick clean black
+#   outlines and soft cel-shading. Simple two-dot eyes and a small
+#   friendly smile. Single character, full body, centered, facing
+#   forward at a slight 3/4 angle. Plain flat light cream background,
+#   no shadow, isolated illustration suitable for cutting out, no text,
+#   no logos, no watermark.
+
+- slug: claude-model
+  name: Claude
+  org: Anthropic
+  category: models
+  brand_color: "#CC785C"
+  accessory: 丸メガネ
+  version: "Sonnet 5 系"
+  status: updated
+  status_label: 直近ニュースあり（07月更新）
+  summary: 推論と長文コンテキストに強み。Sonnet / Opus / Haiku の三段構成でコスト対応力を確保。
+  source_notes:
+    - "Vault/06 News/Claude Science.md"
+  related: [gpt-model]
+  image_path: assets/characters/models/claude.png
+  generated_with: ""
+  prompt: |
+    Flat-shaded chibi mascot character illustration. A soft, rounded,
+    fluffy cloud/brain-shaped creature body with thick clean black
+    outlines and soft cel-shading. Simple two-dot eyes and a small
+    friendly smile. Single character, full body, centered, facing
+    forward at a slight 3/4 angle. Plain flat light cream background,
+    no shadow, isolated illustration suitable for cutting out, no text,
+    no logos, no watermark.
+    The body is colored in warm terracotta clay orange (#CC785C). It
+    wears small round wire-frame glasses, giving a thoughtful, calm
+    expression. No other accessories.
+
+- slug: gpt-model
+  name: GPT
+  org: OpenAI
+  category: models
+  brand_color: "#10A37F"
+  accessory: 光の粒
+  version: "GPT-5.6"
+  status: updated
+  status_label: 直近ニュースあり（07月更新）
+  summary: 汎用性とマルチモーダルの王道。ChatGPT と API エコシステムの両輪で市場を牽引。
+  source_notes:
+    - "Vault/06 News/GPT-5.6.md"
+  related: [claude-model]
+  image_path: assets/characters/models/gpt.png
+  generated_with: ""
+  prompt: |
+    Flat-shaded chibi mascot character illustration. A soft, rounded,
+    fluffy cloud/brain-shaped creature body with thick clean black
+    outlines and soft cel-shading. Simple two-dot eyes and a small
+    friendly smile. Single character, full body, centered, facing
+    forward at a slight 3/4 angle. Plain flat light cream background,
+    no shadow, isolated illustration suitable for cutting out, no text,
+    no logos, no watermark.
+    The body is colored in deep teal green (#10A37F). It has a bright,
+    energetic, all-purpose expression, with a few tiny glowing
+    multicolor sparkle dots floating around its head representing
+    versatility. No other accessories.
+
+- slug: gemini-model
+  name: Gemini
+  org: Google
+  category: models
+  brand_color: "#4C6FE0"
+  accessory: 双子の星
+  version: "3.5 Flash"
+  status: updated
+  status_label: 直近ニュースあり（07月更新）
+  summary: Google製品群へのネイティブ統合。Computer Use 系の操作能力を急速に強化中。
+  source_notes:
+    - "Vault/06 News/Gemini 3.5 Flash、Computer Use統合.md"
+  related: [claude-model, gpt-model]
+  image_path: assets/characters/models/gemini.png
+  generated_with: ""
+  prompt: |
+    Flat-shaded chibi mascot character illustration. A soft, rounded,
+    fluffy cloud/brain-shaped creature body with thick clean black
+    outlines and soft cel-shading. Simple two-dot eyes and a small
+    friendly smile. Single character, full body, centered, facing
+    forward at a slight 3/4 angle. Plain flat light cream background,
+    no shadow, isolated illustration suitable for cutting out, no text,
+    no logos, no watermark.
+    The body is colored in a rich blue (#4C6FE0), the same rounded
+    cloud/brain shape as the others. It has two small twinkling
+    star-shaped ornaments floating above its head, one on each side,
+    representing a pair of twins. No other accessories.
+
+- slug: llama-model
+  name: Llama
+  org: Meta
+  category: models
+  brand_color: "#B98A2E"
+  accessory: ラマの耳
+  version: "4 系"
+  status: stable
+  status_label: 安定運用・変化なし
+  summary: オープンウェイトの主流。自前ホスティングや微調整の土台として定番の地位を維持。
+  source_notes: []
+  related: [deepseek-model]
+  image_path: assets/characters/models/llama.png
+  generated_with: ""
+  prompt: |
+    Flat-shaded chibi mascot character illustration. A soft, rounded,
+    fluffy cloud/brain-shaped creature body with thick clean black
+    outlines and soft cel-shading. Simple two-dot eyes and a small
+    friendly smile. Single character, full body, centered, facing
+    forward at a slight 3/4 angle. Plain flat light cream background,
+    no shadow, isolated illustration suitable for cutting out, no text,
+    no logos, no watermark.
+    The body is colored in warm tan/mustard (#B98A2E). It has a pair
+    of small rounded llama-like ears on top of its head. No other
+    accessories.
+
+- slug: deepseek-model
+  name: DeepSeek
+  org: DeepSeek
+  category: models
+  brand_color: "#5B7FA6"
+  accessory: 虫眼鏡
+  version: "V4 系"
+  status: watch
+  status_label: 要ウォッチ
+  summary: 低コスト・高性能を追う代表的なオープン系モデル。価格破壊のたびに勢力図を揺らす存在。
+  source_notes: []
+  related: [llama-model]
+  image_path: assets/characters/models/deepseek.png
+  generated_with: ""
+  prompt: |
+    Flat-shaded chibi mascot character illustration. A soft, rounded,
+    fluffy cloud/brain-shaped creature body with thick clean black
+    outlines and soft cel-shading. Simple two-dot eyes and a small
+    friendly smile. Single character, full body, centered, facing
+    forward at a slight 3/4 angle. Plain flat light cream background,
+    no shadow, isolated illustration suitable for cutting out, no text,
+    no logos, no watermark.
+    The body is colored in cool silvery blue (#5B7FA6). It holds a
+    small round magnifying glass in one hand, tilted slightly,
+    representing careful searching for efficiency. No other
+    accessories.
+
+- slug: claude-code-devtool
+  name: Claude Code
+  org: Anthropic
+  category: devtools
+  brand_color: "#CC785C"
+  accessory: 工房エプロン
+  version: "Sonnet 5 駆動"
+  status: stable
+  status_label: 安定運用・変化なし
+  summary: ターミナル常駐のエージェント型CLI。大規模改修や自律的な複数ステップ作業に強い。
+  source_notes:
+    - "Vault/01 Concepts/Claude Code.md"
+  related: [codex-devtool]
+  family_of: claude-model
+  image_path: assets/characters/devtools/claude-code.png
+  generated_with: ""
+  prompt: |
+    Flat-shaded chibi mascot character illustration. A soft, rounded,
+    fluffy cloud/brain-shaped creature body with thick clean black
+    outlines and soft cel-shading. Simple two-dot eyes and a small
+    friendly smile. Single character, full body, centered, facing
+    forward at a slight 3/4 angle. Plain flat light cream background,
+    no shadow, isolated illustration suitable for cutting out, no text,
+    no logos, no watermark.
+    The body is colored in the same warm terracotta clay orange
+    (#CC785C) as Claude, showing they are related. It wears a small
+    craftsman apron with a tiny embroidered terminal-prompt symbol
+    (>_) on the chest. No other accessories.
+
+- slug: codex-devtool
+  name: Codex
+  org: OpenAI
+  category: devtools
+  brand_color: "#10A37F"
+  accessory: 幾何学ボディ
+  version: "— 系"
+  status: updated
+  status_label: 直近ニュースあり（07月更新）
+  summary: OpenAI版のコーディングエージェント。ChatGPTとの連携やクラウド実行の統合が深い。
+  source_notes:
+    - "Vault/04 Comparisons/開発AI比較_Cursor_ClaudeCode_Codex_Devin.md"
+  related: [claude-code-devtool]
+  family_of: gpt-model
+  image_path: assets/characters/devtools/codex.png
+  generated_with: ""
+  prompt: |
+    Flat-shaded chibi mascot character illustration. A soft, rounded,
+    fluffy cloud/brain-shaped creature body with thick clean black
+    outlines and soft cel-shading. Simple two-dot eyes and a small
+    friendly smile. Single character, full body, centered, facing
+    forward at a slight 3/4 angle. Plain flat light cream background,
+    no shadow, isolated illustration suitable for cutting out, no text,
+    no logos, no watermark.
+    The body is colored in the same deep teal green (#10A37F) as GPT,
+    showing they are related. Its body has slightly more angular,
+    geometric panel lines suggesting a precise mechanical
+    construction. No other accessories.
+
+- slug: cursor-devtool
+  name: Cursor
+  org: Cursor
+  category: devtools
+  brand_color: "#1A1A1A"
+  accessory: カーソル尾
+  version: "— 系"
+  status: stable
+  status_label: 安定運用・変化なし
+  summary: VS Code フォークのAIネイティブエディタ。補完とチャットの統合体験が滑らか。
+  source_notes:
+    - "Vault/01 Concepts/Cursor.md"
+  related: []
+  image_path: assets/characters/devtools/cursor.png
+  generated_with: ""
+  prompt: |
+    Flat-shaded chibi mascot character illustration. A soft, rounded,
+    fluffy cloud/brain-shaped creature body with thick clean black
+    outlines and soft cel-shading. Simple two-dot eyes and a small
+    friendly smile. Single character, full body, centered, facing
+    forward at a slight 3/4 angle. Plain flat light cream background,
+    no shadow, isolated illustration suitable for cutting out, no text,
+    no logos, no watermark.
+    The body is colored in high-contrast black and white, split
+    roughly down the middle. It has a small pointed cursor-arrow
+    shaped tail. No other accessories.

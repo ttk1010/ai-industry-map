@@ -1,0 +1,17 @@
+# Overview-page ("world map") background. Regenerate only when the set of
+# regions itself changes (a region added/removed/renamed) — not on routine
+# data updates.
+background_path: assets/backgrounds/overview.png
+generated_with: ""
+background_prompt: |
+  Wide flat-color illustrated background scene, warm inviting storybook
+  style, soft painterly shading, gentle depth with layered midground and
+  background elements, no characters, no people, no text, no logos, soft
+  diffused lighting, slightly whimsical and cheerful mood, 16:9 landscape
+  composition.
+  A distant bird's-eye view of a small fantasy world made of five
+  neighboring regions arranged in a gentle arc: a academy campus with
+  round towers, a bustling town square, a cluster of workshop
+  guild-houses, a small harbor with a lighthouse, and a castle floating
+  above soft clouds. Soft winding paths connect the regions. Pastel sky
+  with a few clouds, gentle morning light.
