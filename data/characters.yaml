@@ -128,8 +128,8 @@
   name: Llama
   org: Meta
   category: models
-  brand_color: "#B98A2E"
-  accessory: ラマの耳
+  brand_color: "#BBA9D6"
+  accessory: 作業着とハンマー
   version: "4 系"
   status: stable
   status_label: 安定運用・変化なし
@@ -141,16 +141,13 @@
   source_crop: references/model-llama-source-crop.png
   generated_with: ""
   prompt: |
-    Flat-shaded chibi mascot character illustration. A soft, rounded,
-    fluffy cloud/brain-shaped creature body with thick clean black
-    outlines and soft cel-shading. Simple two-dot eyes and a small
-    friendly smile. Single character, full body, centered, facing
-    forward at a slight 3/4 angle. Plain flat light cream background,
-    no shadow, isolated illustration suitable for cutting out, no text,
-    no logos, no watermark.
-    The body is colored in warm tan/mustard (#B98A2E). It has a pair
-    of small rounded llama-like ears on top of its head. No other
-    accessories.
+    Image-to-image from references/model-llama-source-crop.png (the
+    lavender-purple brain-creature character cropped out of the
+    original "AI頭脳学園" illustration, wearing a denim work jacket and
+    holding a hammer and a small handheld tool). Keep the character
+    close to the source crop — the work-jacket-and-tools look fits
+    Llama's "open weights, bring your own tooling" positioning well.
+    No other changes.
 
 - slug: deepseek-model
   name: DeepSeek
