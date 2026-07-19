@@ -17,31 +17,31 @@
       <p class="lede">俯瞰図。各エリアをクリックすると一覧ページへ移動します。</p>
       <div class="tiles" style="grid-template-columns: repeat(5, 1fr);">
         <button class="tile" data-goto="page-area-models">
-          <span class="badge-icon " style="background:#7A6A4F">①</span>
+          <span class="badge-icon " style="background:#FF9F43">①</span>
           <h3>AIモデル</h3>
           <p>AI頭脳学園 — 基盤モデルの現在地</p>
           <span class="go-label">開く →</span>
         </button>
         <button class="tile" data-goto="page-area-chat">
-          <span class="badge-icon " style="background:#7A6A4F">②</span>
+          <span class="badge-icon " style="background:#4FC3F7">②</span>
           <h3>チャットアシスタント</h3>
           <p>AIおしゃべり広場 — 対話インターフェースとしてのAI</p>
           <span class="go-label">開く →</span>
         </button>
         <button class="tile" data-goto="page-area-devtools">
-          <span class="badge-icon " style="background:#7A6A4F">③</span>
+          <span class="badge-icon " style="background:#33B679">③</span>
           <h3>開発環境</h3>
           <p>AI開発者タウン — コーディングエージェント／IDEの現在地</p>
           <span class="go-label">開く →</span>
         </button>
         <button class="tile" data-goto="page-area-tools">
-          <span class="badge-icon " style="background:#7A6A4F">④</span>
+          <span class="badge-icon " style="background:#FF6B6B">④</span>
           <h3>ツール・サービス</h3>
           <p>MCP港 — いろんな道具・サービスとの連携</p>
           <span class="go-label">開く →</span>
         </button>
         <button class="tile" data-goto="page-area-cloud">
-          <span class="badge-icon " style="background:#7A6A4F">⑤</span>
+          <span class="badge-icon " style="background:#B18AFF">⑤</span>
           <h3>クラウド</h3>
           <p>クラウド王国 — 裏方で支えるインターネットの世界</p>
           <span class="go-label">開く →</span>
@@ -49,38 +49,38 @@
       </div>
     </section>
     <section class="page" id="page-area-models" data-title="AIモデル" data-parent="page-overview">
-      <h1 class="title">① AIモデル — AI頭脳学園</h1>
+      <h1 class="title"><span class="num-badge">1</span>AIモデル — AI頭脳学園</h1>
       <p class="lede">各社の基盤モデル。カードの色はニュース連動ステータス（更新あり/安定/要ウォッチ）を示す。</p>
       <div class="tiles" style="grid-template-columns: repeat(5, 1fr);">
-        <button class="pcard" data-goto="page-claude-model">
+        <button class="pcard updated" data-goto="page-claude-model">
           <div class="pin-row"><span class="pin updated"></span><span class="pin-label">Updated</span></div>
           <span class="badge-icon " style="background-image:url('../assets/characters/models/claude.png'); background-color:#D97757"></span>
           <h3>Claude</h3>
           <p class="desc">Anthropic — 推論と長文コンテキストに強み。Sonnet / Opus / Haiku の三段構成でコスト対応力を確保。</p>
           <span class="go-label">詳細を見る →</span>
         </button>
-        <button class="pcard" data-goto="page-gpt-model">
+        <button class="pcard updated" data-goto="page-gpt-model">
           <div class="pin-row"><span class="pin updated"></span><span class="pin-label">Updated</span></div>
           <span class="badge-icon " style="background:#74AA9C">G</span>
           <h3>GPT</h3>
           <p class="desc">OpenAI — 汎用性とマルチモーダルの王道。ChatGPT と API エコシステムの両輪で市場を牽引。</p>
           <span class="go-label">詳細を見る →</span>
         </button>
-        <button class="pcard" data-goto="page-gemini-model">
+        <button class="pcard updated" data-goto="page-gemini-model">
           <div class="pin-row"><span class="pin updated"></span><span class="pin-label">Updated</span></div>
           <span class="badge-icon " style="background:#3186FF">G</span>
           <h3>Gemini</h3>
           <p class="desc">Google — Google製品群へのネイティブ統合。Computer Use 系の操作能力を急速に強化中。</p>
           <span class="go-label">詳細を見る →</span>
         </button>
-        <button class="pcard" data-goto="page-llama-model">
+        <button class="pcard stable" data-goto="page-llama-model">
           <div class="pin-row"><span class="pin stable"></span><span class="pin-label">Stable</span></div>
           <span class="badge-icon " style="background:#B98A2E">L</span>
           <h3>Llama</h3>
           <p class="desc">Meta — オープンウェイトの主流。自前ホスティングや微調整の土台として定番の地位を維持。</p>
           <span class="go-label">詳細を見る →</span>
         </button>
-        <button class="pcard" data-goto="page-deepseek-model">
+        <button class="pcard watch" data-goto="page-deepseek-model">
           <div class="pin-row"><span class="pin watch"></span><span class="pin-label">Watch</span></div>
           <span class="badge-icon " style="background:#5B7FA6">D</span>
           <h3>DeepSeek</h3>
@@ -174,24 +174,24 @@
       </div>
     </section>
     <section class="page" id="page-area-chat" data-title="チャットアシスタント" data-parent="page-overview">
-      <h1 class="title">② チャットアシスタント — AIおしゃべり広場</h1>
+      <h1 class="title"><span class="num-badge">2</span>チャットアシスタント — AIおしゃべり広場</h1>
       <p class="lede">同じAIでも「モデル」ではなく「話し相手」として使う入り口。</p>
       <div class="tiles" style="grid-template-columns: repeat(3, 1fr);">
-        <button class="pcard" data-goto="page-claude-chat">
+        <button class="pcard updated" data-goto="page-claude-chat">
           <div class="pin-row"><span class="pin updated"></span><span class="pin-label">Updated</span></div>
           <span class="badge-icon " style="background:#D97757">C</span>
           <h3>Claude</h3>
           <p class="desc">Anthropic — Anthropicの対話インターフェース。Claude.aiとして提供され、質問応答・要約・文章作成などをチャット形式で行える。</p>
           <span class="go-label">詳細を見る →</span>
         </button>
-        <button class="pcard" data-goto="page-chatgpt-chat">
+        <button class="pcard updated" data-goto="page-chatgpt-chat">
           <div class="pin-row"><span class="pin updated"></span><span class="pin-label">Updated</span></div>
           <span class="badge-icon " style="background:#74AA9C">C</span>
           <h3>ChatGPT</h3>
           <p class="desc">OpenAI — OpenAIの対話型チャットボット。自然な会話で質問応答・文章作成・要約・翻訳・アイデア出しなどをこなす、最も広く使われるAIチャット。</p>
           <span class="go-label">詳細を見る →</span>
         </button>
-        <button class="pcard" data-goto="page-gemini-chat">
+        <button class="pcard updated" data-goto="page-gemini-chat">
           <div class="pin-row"><span class="pin updated"></span><span class="pin-label">Updated</span></div>
           <span class="badge-icon " style="background:#3186FF">G</span>
           <h3>Gemini</h3>
@@ -244,24 +244,24 @@
       </div>
     </section>
     <section class="page" id="page-area-devtools" data-title="開発環境" data-parent="page-overview">
-      <h1 class="title">③ 開発環境 — AI開発者タウン</h1>
+      <h1 class="title"><span class="num-badge">3</span>開発環境 — AI開発者タウン</h1>
       <p class="lede">モデルの力を実際の開発作業に変換するツール群。</p>
       <div class="tiles" style="grid-template-columns: repeat(3, 1fr);">
-        <button class="pcard" data-goto="page-claude-code-devtool">
+        <button class="pcard stable" data-goto="page-claude-code-devtool">
           <div class="pin-row"><span class="pin stable"></span><span class="pin-label">Stable</span></div>
           <span class="badge-icon " style="background:#D97757">C</span>
           <h3>Claude Code</h3>
           <p class="desc">Anthropic — ターミナル常駐のエージェント型CLI。大規模改修や自律的な複数ステップ作業に強い。</p>
           <span class="go-label">詳細を見る →</span>
         </button>
-        <button class="pcard" data-goto="page-codex-devtool">
+        <button class="pcard updated" data-goto="page-codex-devtool">
           <div class="pin-row"><span class="pin updated"></span><span class="pin-label">Updated</span></div>
           <span class="badge-icon " style="background:#74AA9C">C</span>
           <h3>Codex</h3>
           <p class="desc">OpenAI — OpenAI版のコーディングエージェント。ChatGPTとの連携やクラウド実行の統合が深い。</p>
           <span class="go-label">詳細を見る →</span>
         </button>
-        <button class="pcard" data-goto="page-cursor-devtool">
+        <button class="pcard stable" data-goto="page-cursor-devtool">
           <div class="pin-row"><span class="pin stable"></span><span class="pin-label">Stable</span></div>
           <span class="badge-icon " style="background:#1A1A1A">C</span>
           <h3>Cursor</h3>
@@ -314,31 +314,31 @@
       </div>
     </section>
     <section class="page" id="page-area-tools" data-title="ツール・サービス" data-parent="page-overview">
-      <h1 class="title">④ ツール・サービス — MCP港</h1>
+      <h1 class="title"><span class="num-badge">4</span>ツール・サービス — MCP港</h1>
       <p class="lede">AIがつながる先の道具箱。開発・仕事で使う定番サービス群。</p>
       <div class="tiles" style="grid-template-columns: repeat(4, 1fr);">
-        <button class="pcard" data-goto="page-github">
+        <button class="pcard stable" data-goto="page-github">
           <div class="pin-row"><span class="pin stable"></span><span class="pin-label">Stable</span></div>
           <span class="badge-icon " style="background:#181717">G</span>
           <h3>GitHub</h3>
           <p class="desc">GitHub — コードのバージョン管理・共有プラットフォーム。個人の学習からOSS・企業開発まで、AIコーディングツールの共通の置き場所。</p>
           <span class="go-label">詳細を見る →</span>
         </button>
-        <button class="pcard" data-goto="page-notion">
+        <button class="pcard stable" data-goto="page-notion">
           <div class="pin-row"><span class="pin stable"></span><span class="pin-label">Stable</span></div>
           <span class="badge-icon " style="background:#191919">N</span>
           <h3>Notion</h3>
           <p class="desc">Notion — メモ・文書・タスク管理・DBを1つにまとめるワークスペース。AI連携での情報整理の自動化が進む。</p>
           <span class="go-label">詳細を見る →</span>
         </button>
-        <button class="pcard" data-goto="page-slack">
+        <button class="pcard stable" data-goto="page-slack">
           <div class="pin-row"><span class="pin stable"></span><span class="pin-label">Stable</span></div>
           <span class="badge-icon " style="background:#4A154B">S</span>
           <h3>Slack</h3>
           <p class="desc">Slack — チーム向けチャットツール。チャンネル単位の会話整理と、AIボット連携での自動化が広がる。</p>
           <span class="go-label">詳細を見る →</span>
         </button>
-        <button class="pcard" data-goto="page-google-drive">
+        <button class="pcard stable" data-goto="page-google-drive">
           <div class="pin-row"><span class="pin stable"></span><span class="pin-label">Stable</span></div>
           <span class="badge-icon " style="background:#0F9D58">G</span>
           <h3>Google Drive</h3>
@@ -405,24 +405,24 @@
       </div>
     </section>
     <section class="page" id="page-area-cloud" data-title="クラウド" data-parent="page-overview">
-      <h1 class="title">⑤ クラウド — クラウド王国</h1>
+      <h1 class="title"><span class="num-badge">5</span>クラウド — クラウド王国</h1>
       <p class="lede">データを保存し、AIを動かす計算資源を提供する基盤。</p>
       <div class="tiles" style="grid-template-columns: repeat(3, 1fr);">
-        <button class="pcard" data-goto="page-aws">
+        <button class="pcard stable" data-goto="page-aws">
           <div class="pin-row"><span class="pin stable"></span><span class="pin-label">Stable</span></div>
           <span class="badge-icon " style="background:#FF9900">A</span>
           <h3>AWS</h3>
           <p class="desc">Amazon — Amazonのクラウド基盤。サーバー・DB・AI関連サービスを従量課金で利用でき、多くのAIサービスの裏側を支える。</p>
           <span class="go-label">詳細を見る →</span>
         </button>
-        <button class="pcard" data-goto="page-azure">
+        <button class="pcard stable" data-goto="page-azure">
           <div class="pin-row"><span class="pin stable"></span><span class="pin-label">Stable</span></div>
           <span class="badge-icon " style="background:#0078D4">A</span>
           <h3>Azure</h3>
           <p class="desc">Microsoft — Microsoftのクラウド基盤。OpenAIモデルの主要な提供経路の一つで、企業向けAI導入の中心的存在。</p>
           <span class="go-label">詳細を見る →</span>
         </button>
-        <button class="pcard" data-goto="page-google-cloud">
+        <button class="pcard stable" data-goto="page-google-cloud">
           <div class="pin-row"><span class="pin stable"></span><span class="pin-label">Stable</span></div>
           <span class="badge-icon " style="background:#4285F4">G</span>
           <h3>Google Cloud</h3>

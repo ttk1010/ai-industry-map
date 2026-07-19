@@ -84,13 +84,17 @@ def grid_cols_style(count, max_cols=6):
     return ""
 
 
+AREA_TILE_COLORS = ["#FF9F43", "#4FC3F7", "#33B679", "#FF6B6B", "#B18AFF", "#FFD166"]
+
+
 def render_overview(world, areas):
     tiles = []
     for i, area in enumerate(areas):
         glyph = CIRCLED_DIGITS[i] if i < len(CIRCLED_DIGITS) else str(i + 1)
+        color = AREA_TILE_COLORS[i % len(AREA_TILE_COLORS)]
         tiles.append(f"""
         <button class="tile" data-goto="page-area-{e(area['id'])}">
-          {badge_icon(glyph, "#7A6A4F")}
+          {badge_icon(glyph, color)}
           <h3>{e(area['title'])}</h3>
           <p>{e(area.get('world_name', ''))} — {e(area['subtitle'])}</p>
           <span class="go-label">開く →</span>
@@ -108,11 +112,11 @@ def render_overview(world, areas):
 
 
 def render_area_page(area, members, area_index, comparisons):
-    glyph = CIRCLED_DIGITS[area_index] if area_index < len(CIRCLED_DIGITS) else str(area_index + 1)
+    glyph = str(area_index + 1)
     cards = []
     for m in members:
         cards.append(f"""
-        <button class="pcard" data-goto="page-{e(m['slug'])}">
+        <button class="pcard {e(m['status'])}" data-goto="page-{e(m['slug'])}">
           <div class="pin-row"><span class="pin {e(m['status'])}"></span><span class="pin-label">{e(STATUS_LABELS.get(m['status'], m['status']))}</span></div>
           {badge_icon(m['name'][0], m['brand_color'], is_image_candidate=m)}
           <h3>{e(m['name'])}</h3>
@@ -128,7 +132,7 @@ def render_area_page(area, members, area_index, comparisons):
 
     cls, style, data_has_bg = bg_attrs(area.get("background_path"))
     world_name = area.get("world_name")
-    heading = f"{glyph} {e(area['title'])}" + (f" — {e(world_name)}" if world_name else "")
+    heading = f'<span class="num-badge">{glyph}</span>{e(area["title"])}' + (f" — {e(world_name)}" if world_name else "")
     grid_style = grid_cols_style(len(members))
     return f"""
     <section class="{cls}" id="page-area-{e(area['id'])}" data-title="{e(area['title'])}" data-parent="page-overview"{data_has_bg}{style}>
