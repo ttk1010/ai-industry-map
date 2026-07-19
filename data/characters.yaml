@@ -13,12 +13,21 @@
 #   forward at a slight 3/4 angle. Plain flat light cream background,
 #   no shadow, isolated illustration suitable for cutting out, no text,
 #   no logos, no watermark.
+#
+# brand_color sourcing (2026-07-19):
+#   Claude  #D97757 — Anthropic's actual app/icon color (user-provided).
+#   GPT     #74AA9C — extracted from the ChatGPT logo mark itself
+#                     (brandcolorcode.com); OpenAI has no published hex
+#                     for the mark, this is the closest independent match.
+#   Gemini  #3B8CFF — sampled by the user directly from the Gemini logo
+#                     gradient (blue end); Gemini's mark is an official
+#                     multi-color gradient, not a single flat color.
 
 - slug: claude-model
   name: Claude
   org: Anthropic
   category: models
-  brand_color: "#CC785C"
+  brand_color: "#D97757"
   accessory: 丸メガネ
   version: "Sonnet 5 系"
   status: updated
@@ -37,7 +46,7 @@
     forward at a slight 3/4 angle. Plain flat light cream background,
     no shadow, isolated illustration suitable for cutting out, no text,
     no logos, no watermark.
-    The body is colored in warm terracotta clay orange (#CC785C). It
+    The body is colored in warm terracotta clay orange (#D97757). It
     wears small round wire-frame glasses, giving a thoughtful, calm
     expression. No other accessories.
 
@@ -45,7 +54,7 @@
   name: GPT
   org: OpenAI
   category: models
-  brand_color: "#10A37F"
+  brand_color: "#74AA9C"
   accessory: 光の粒
   version: "GPT-5.6"
   status: updated
@@ -64,8 +73,8 @@
     forward at a slight 3/4 angle. Plain flat light cream background,
     no shadow, isolated illustration suitable for cutting out, no text,
     no logos, no watermark.
-    The body is colored in deep teal green (#10A37F). It has a bright,
-    energetic, all-purpose expression, with a few tiny glowing
+    The body is colored in a muted sage-teal green (#74AA9C). It has a
+    bright, energetic, all-purpose expression, with a few tiny glowing
     multicolor sparkle dots floating around its head representing
     versatility. No other accessories.
 
@@ -73,7 +82,7 @@
   name: Gemini
   org: Google
   category: models
-  brand_color: "#4C6FE0"
+  brand_color: "#3B8CFF"
   accessory: 双子の星
   version: "3.5 Flash"
   status: updated
@@ -92,7 +101,7 @@
     forward at a slight 3/4 angle. Plain flat light cream background,
     no shadow, isolated illustration suitable for cutting out, no text,
     no logos, no watermark.
-    The body is colored in a rich blue (#4C6FE0), the same rounded
+    The body is colored in a vivid sky blue (#3B8CFF), the same rounded
     cloud/brain shape as the others. It has two small twinkling
     star-shaped ornaments floating above its head, one on each side,
     representing a pair of twins. No other accessories.
@@ -154,7 +163,7 @@
   name: Claude Code
   org: Anthropic
   category: devtools
-  brand_color: "#CC785C"
+  brand_color: "#D97757"
   accessory: 工房エプロン
   version: "Sonnet 5 駆動"
   status: stable
@@ -175,7 +184,7 @@
     no shadow, isolated illustration suitable for cutting out, no text,
     no logos, no watermark.
     The body is colored in the same warm terracotta clay orange
-    (#CC785C) as Claude, showing they are related. It wears a small
+    (#D97757) as Claude, showing they are related. It wears a small
     craftsman apron with a tiny embroidered terminal-prompt symbol
     (>_) on the chest. No other accessories.
 
@@ -183,7 +192,7 @@
   name: Codex
   org: OpenAI
   category: devtools
-  brand_color: "#10A37F"
+  brand_color: "#74AA9C"
   accessory: 幾何学ボディ
   version: "— 系"
   status: updated
@@ -203,8 +212,8 @@
     forward at a slight 3/4 angle. Plain flat light cream background,
     no shadow, isolated illustration suitable for cutting out, no text,
     no logos, no watermark.
-    The body is colored in the same deep teal green (#10A37F) as GPT,
-    showing they are related. Its body has slightly more angular,
+    The body is colored in the same muted sage-teal green (#74AA9C) as
+    GPT, showing they are related. Its body has slightly more angular,
     geometric panel lines suggesting a precise mechanical
     construction. No other accessories.
 
