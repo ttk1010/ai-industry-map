@@ -19,9 +19,10 @@
 #   GPT     #74AA9C — extracted from the ChatGPT logo mark itself
 #                     (brandcolorcode.com); OpenAI has no published hex
 #                     for the mark, this is the closest independent match.
-#   Gemini  #3B8CFF — sampled by the user directly from the Gemini logo
-#                     gradient (blue end); Gemini's mark is an official
-#                     multi-color gradient, not a single flat color.
+#   Gemini  #3186FF — literal fill value of the blue ellipses forming the
+#                     right point of the star in the official Gemini SVG
+#                     (references/Google_Gemini_logo_2025.svg), confirmed
+#                     by reading the source markup directly.
 
 - slug: claude-model
   name: Claude
@@ -82,7 +83,7 @@
   name: Gemini
   org: Google
   category: models
-  brand_color: "#3B8CFF"
+  brand_color: "#3186FF"
   accessory: 双子の星
   version: "3.5 Flash"
   status: updated
@@ -101,7 +102,7 @@
     forward at a slight 3/4 angle. Plain flat light cream background,
     no shadow, isolated illustration suitable for cutting out, no text,
     no logos, no watermark.
-    The body is colored in a vivid sky blue (#3B8CFF), the same rounded
+    The body is colored in a vivid sky blue (#3186FF), the same rounded
     cloud/brain shape as the others. It has two small twinkling
     star-shaped ornaments floating above its head, one on each side,
     representing a pair of twins. No other accessories.
