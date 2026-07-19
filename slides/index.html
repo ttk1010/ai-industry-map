@@ -15,17 +15,35 @@
     <section class="page" id="page-overview" data-title="全体像" data-parent="">
       <h1 class="title">AI業界地図 — 全体像</h1>
       <p class="lede">俯瞰図。各エリアをクリックすると一覧ページへ移動します。</p>
-      <div class="tiles" style="grid-template-columns: repeat(2, 1fr);">
+      <div class="tiles" style="grid-template-columns: repeat(5, 1fr);">
         <button class="tile" data-goto="page-area-models">
           <span class="badge-icon " style="background:#7A6A4F">①</span>
           <h3>AIモデル</h3>
           <p>AI頭脳学園 — 基盤モデルの現在地</p>
           <span class="go-label">開く →</span>
         </button>
-        <button class="tile" data-goto="page-area-devtools">
+        <button class="tile" data-goto="page-area-chat">
           <span class="badge-icon " style="background:#7A6A4F">②</span>
+          <h3>チャットアシスタント</h3>
+          <p>AIおしゃべり広場 — 対話インターフェースとしてのAI</p>
+          <span class="go-label">開く →</span>
+        </button>
+        <button class="tile" data-goto="page-area-devtools">
+          <span class="badge-icon " style="background:#7A6A4F">③</span>
           <h3>開発環境</h3>
           <p>AI開発者タウン — コーディングエージェント／IDEの現在地</p>
+          <span class="go-label">開く →</span>
+        </button>
+        <button class="tile" data-goto="page-area-tools">
+          <span class="badge-icon " style="background:#7A6A4F">④</span>
+          <h3>ツール・サービス</h3>
+          <p>MCP港 — いろんな道具・サービスとの連携</p>
+          <span class="go-label">開く →</span>
+        </button>
+        <button class="tile" data-goto="page-area-cloud">
+          <span class="badge-icon " style="background:#7A6A4F">⑤</span>
+          <h3>クラウド</h3>
+          <p>クラウド王国 — 裏方で支えるインターネットの世界</p>
           <span class="go-label">開く →</span>
         </button>
       </div>
@@ -70,6 +88,7 @@
           <span class="go-label">詳細を見る →</span>
         </button>
       </div>
+      <div class="compare-links"><button class="compare-link" data-goto="page-compare-llm-models">📊 比較して見る: 主要商用LLMの比較（GPT・Claude・Gemini） →</button></div>
     </section>
     <section class="page detail" id="page-claude-model" data-title="Claude" data-parent="page-area-models">
       <div class="detail-head">
@@ -80,7 +99,7 @@
         </div>
       </div>
       <p class="lede">推論と長文コンテキストに強み。Sonnet / Opus / Haiku の三段構成でコスト対応力を確保。</p>
-      <div class="factbox"><div class="row"><span>バージョン</span><span>Sonnet 5 系</span></div><div class="row"><span>ステータス</span><span>直近ニュースあり（07月更新）</span></div><div class="row"><span>出典</span><span>Vault/06 News/Claude Science.md</span></div>
+      <div class="factbox"><div class="row"><span>Haiku 4.5</span><span>最軽量・低コスト・低レイテンシ。大量処理や単純タスク向け</span></div><div class="row"><span>Sonnet 5</span><span>汎用バランス型。速度・コスト・性能のバランスが良く通常利用の主力</span></div><div class="row"><span>Opus 4.8</span><span>最高性能。複雑な推論や長時間の自律タスク向け</span></div><div class="row"><span>Fable 5</span><span>（要確認・仮）対話や創作寄りの特化モデルという理解</span></div><div class="row"><span>ステータス</span><span>直近ニュースあり（07月更新）</span></div><div class="row"><span>出典</span><span>Vault/01 Concepts/Claude.md</span></div><div class="row"><span>出典</span><span>Vault/06 News/Claude Science.md</span></div>
       </div>
       <div class="related"><a href="#" data-goto="page-gpt-model">→ GPTと比較する</a><a href="#" data-goto="page-area-models">→ AIモデル一覧に戻る</a>
       </div>
@@ -94,7 +113,7 @@
         </div>
       </div>
       <p class="lede">汎用性とマルチモーダルの王道。ChatGPT と API エコシステムの両輪で市場を牽引。</p>
-      <div class="factbox"><div class="row"><span>バージョン</span><span>GPT-5.6</span></div><div class="row"><span>ステータス</span><span>直近ニュースあり（07月更新）</span></div><div class="row"><span>出典</span><span>Vault/06 News/GPT-5.6.md</span></div>
+      <div class="factbox"><div class="row"><span>バージョン</span><span>GPT-5.6</span></div><div class="row"><span>ステータス</span><span>直近ニュースあり（07月更新）</span></div><div class="row"><span>出典</span><span>Vault/01 Concepts/GPT.md</span></div><div class="row"><span>出典</span><span>Vault/06 News/GPT-5.6.md</span></div>
       </div>
       <div class="related"><a href="#" data-goto="page-claude-model">→ Claudeと比較する</a><a href="#" data-goto="page-area-models">→ AIモデル一覧に戻る</a>
       </div>
@@ -108,7 +127,7 @@
         </div>
       </div>
       <p class="lede">Google製品群へのネイティブ統合。Computer Use 系の操作能力を急速に強化中。</p>
-      <div class="factbox"><div class="row"><span>バージョン</span><span>3.5 Flash</span></div><div class="row"><span>ステータス</span><span>直近ニュースあり（07月更新）</span></div><div class="row"><span>出典</span><span>Vault/06 News/Gemini 3.5 Flash、Computer Use統合.md</span></div>
+      <div class="factbox"><div class="row"><span>バージョン</span><span>3.5 Flash</span></div><div class="row"><span>ステータス</span><span>直近ニュースあり（07月更新）</span></div><div class="row"><span>出典</span><span>Vault/01 Concepts/Gemini.md</span></div><div class="row"><span>出典</span><span>Vault/06 News/Gemini 3.5 Flash、Computer Use統合.md</span></div>
       </div>
       <div class="related"><a href="#" data-goto="page-claude-model">→ Claudeと比較する</a><a href="#" data-goto="page-gpt-model">→ GPTと比較する</a><a href="#" data-goto="page-area-models">→ AIモデル一覧に戻る</a>
       </div>
@@ -122,7 +141,7 @@
         </div>
       </div>
       <p class="lede">オープンウェイトの主流。自前ホスティングや微調整の土台として定番の地位を維持。</p>
-      <div class="factbox"><div class="row"><span>バージョン</span><span>4 系</span></div><div class="row"><span>ステータス</span><span>安定運用・変化なし</span></div>
+      <div class="factbox"><div class="row"><span>バージョン</span><span>4 系</span></div><div class="row"><span>ステータス</span><span>安定運用・変化なし</span></div><div class="row"><span>出典</span><span>Vault/01 Concepts/Llama.md</span></div>
       </div>
       <div class="related"><a href="#" data-goto="page-deepseek-model">→ DeepSeekと比較する</a><a href="#" data-goto="page-area-models">→ AIモデル一覧に戻る</a>
       </div>
@@ -141,8 +160,91 @@
       <div class="related"><a href="#" data-goto="page-llama-model">→ Llamaと比較する</a><a href="#" data-goto="page-area-models">→ AIモデル一覧に戻る</a>
       </div>
     </section>
+    <section class="page" id="page-compare-llm-models" data-title="主要商用LLMの比較" data-parent="page-area-models">
+      <h1 class="title">主要商用LLMの比較</h1>
+      <p class="lede">GPT・Claude・Gemini ／ 出典: Vault/04 Comparisons/LLM比較- GPT・Claude・Gemini.md</p>
+      <div class="compare-table-wrap">
+        <table class="compare">
+          <thead><tr><th class="row-label"></th><th><span class="model-head"><span class="dot" style="background:#D97757"></span>Claude</span></th><th><span class="model-head"><span class="dot" style="background:#74AA9C"></span>GPT</span></th><th><span class="model-head"><span class="dot" style="background:#3186FF"></span>Gemini</span></th></tr></thead>
+          <tbody><tr><td class="row-label">主な強み</td><td>長文処理・要約</td><td>汎用性・開発者エコシステム</td><td>Google連携・マルチモーダル</td></tr><tr><td class="row-label">長文コンテキスト傾向</td><td>非常に大きい</td><td>大きい</td><td>非常に大きい</td></tr><tr><td class="row-label">マルチモーダル対応</td><td>対応あり</td><td>強い</td><td>強い</td></tr><tr><td class="row-label">コード支援</td><td>強い</td><td>強い</td><td>強い</td></tr><tr><td class="row-label">エコシステム普及</td><td>広い</td><td>非常に広い</td><td>広い</td></tr><tr><td class="row-label">クラウド/業務連携</td><td>API中心</td><td>Microsoft/Azure中心</td><td>Google Cloud/Workspace中心</td></tr><tr><td class="row-label">得意な利用場面</td><td>長文分析・文書作業</td><td>汎用アプリ開発</td><td>Google基盤の組み込み</td></tr><tr><td class="row-label">注意点</td><td>地域・提供差がある</td><td>モデル差が大きい</td><td>製品名/系統が変わりやすい</td></tr><tr><td class="row-label">こんな時に</td><td>長文の読解・要約・文書作業を重視するなら候補</td><td>汎用API・豊富なSDK・実績重視なら第一候補</td><td>Google Cloud/Workspace統合や画像を含むマルチモーダル処理を重視するなら候補</td></tr></tbody>
+        </table>
+      </div>
+      <div class="related">
+        <a href="#" data-goto="page-area-models">→ AIモデル一覧に戻る</a>
+      </div>
+    </section>
+    <section class="page" id="page-area-chat" data-title="チャットアシスタント" data-parent="page-overview">
+      <h1 class="title">② チャットアシスタント — AIおしゃべり広場</h1>
+      <p class="lede">同じAIでも「モデル」ではなく「話し相手」として使う入り口。</p>
+      <div class="tiles" style="grid-template-columns: repeat(3, 1fr);">
+        <button class="pcard" data-goto="page-claude-chat">
+          <div class="pin-row"><span class="pin updated"></span><span class="pin-label">Updated</span></div>
+          <span class="badge-icon " style="background:#D97757">C</span>
+          <h3>Claude</h3>
+          <p class="desc">Anthropic — Anthropicの対話インターフェース。Claude.aiとして提供され、質問応答・要約・文章作成などをチャット形式で行える。</p>
+          <span class="go-label">詳細を見る →</span>
+        </button>
+        <button class="pcard" data-goto="page-chatgpt-chat">
+          <div class="pin-row"><span class="pin updated"></span><span class="pin-label">Updated</span></div>
+          <span class="badge-icon " style="background:#74AA9C">C</span>
+          <h3>ChatGPT</h3>
+          <p class="desc">OpenAI — OpenAIの対話型チャットボット。自然な会話で質問応答・文章作成・要約・翻訳・アイデア出しなどをこなす、最も広く使われるAIチャット。</p>
+          <span class="go-label">詳細を見る →</span>
+        </button>
+        <button class="pcard" data-goto="page-gemini-chat">
+          <div class="pin-row"><span class="pin updated"></span><span class="pin-label">Updated</span></div>
+          <span class="badge-icon " style="background:#3186FF">G</span>
+          <h3>Gemini</h3>
+          <p class="desc">Google — Googleの対話アシスタント。検索・Workspace・Androidと連携し、テキスト以外に画像なども扱えるマルチモーダルな対話が特徴。</p>
+          <span class="go-label">詳細を見る →</span>
+        </button>
+      </div>
+      <div class="compare-links"></div>
+    </section>
+    <section class="page detail" id="page-claude-chat" data-title="Claude" data-parent="page-area-chat">
+      <div class="detail-head">
+        <span class="badge-icon " style="background:#D97757">C</span>
+        <div>
+          <h1 class="title">Claude</h1>
+          <span class="meta">Anthropic ／ カテゴリ: チャットアシスタント</span>
+        </div>
+      </div>
+      <p class="lede">Anthropicの対話インターフェース。Claude.aiとして提供され、質問応答・要約・文章作成などをチャット形式で行える。</p>
+      <div class="factbox"><div class="row"><span>バージョン</span><span>Claude.ai</span></div><div class="row"><span>ステータス</span><span>直近ニュースあり（07月更新）</span></div><div class="row"><span>出典</span><span>Vault/01 Concepts/Claude.md</span></div>
+      </div>
+      <div class="related"><a href="#" data-goto="page-chatgpt-chat">→ ChatGPTと比較する</a><a href="#" data-goto="page-gemini-chat">→ Geminiと比較する</a><a href="#" data-goto="page-area-chat">→ チャットアシスタント一覧に戻る</a>
+      </div>
+    </section>
+    <section class="page detail" id="page-chatgpt-chat" data-title="ChatGPT" data-parent="page-area-chat">
+      <div class="detail-head">
+        <span class="badge-icon " style="background:#74AA9C">C</span>
+        <div>
+          <h1 class="title">ChatGPT</h1>
+          <span class="meta">OpenAI ／ カテゴリ: チャットアシスタント</span>
+        </div>
+      </div>
+      <p class="lede">OpenAIの対話型チャットボット。自然な会話で質問応答・文章作成・要約・翻訳・アイデア出しなどをこなす、最も広く使われるAIチャット。</p>
+      <div class="factbox"><div class="row"><span>バージョン</span><span>chat.openai.com</span></div><div class="row"><span>ステータス</span><span>直近ニュースあり（07月更新）</span></div><div class="row"><span>出典</span><span>Vault/01 Concepts/ChatGPT.md</span></div>
+      </div>
+      <div class="related"><a href="#" data-goto="page-claude-chat">→ Claudeと比較する</a><a href="#" data-goto="page-gemini-chat">→ Geminiと比較する</a><a href="#" data-goto="page-area-chat">→ チャットアシスタント一覧に戻る</a>
+      </div>
+    </section>
+    <section class="page detail" id="page-gemini-chat" data-title="Gemini" data-parent="page-area-chat">
+      <div class="detail-head">
+        <span class="badge-icon " style="background:#3186FF">G</span>
+        <div>
+          <h1 class="title">Gemini</h1>
+          <span class="meta">Google ／ カテゴリ: チャットアシスタント</span>
+        </div>
+      </div>
+      <p class="lede">Googleの対話アシスタント。検索・Workspace・Androidと連携し、テキスト以外に画像なども扱えるマルチモーダルな対話が特徴。</p>
+      <div class="factbox"><div class="row"><span>バージョン</span><span>gemini.google.com</span></div><div class="row"><span>ステータス</span><span>直近ニュースあり（07月更新）</span></div><div class="row"><span>出典</span><span>Vault/01 Concepts/Gemini.md</span></div>
+      </div>
+      <div class="related"><a href="#" data-goto="page-claude-chat">→ Claudeと比較する</a><a href="#" data-goto="page-chatgpt-chat">→ ChatGPTと比較する</a><a href="#" data-goto="page-area-chat">→ チャットアシスタント一覧に戻る</a>
+      </div>
+    </section>
     <section class="page" id="page-area-devtools" data-title="開発環境" data-parent="page-overview">
-      <h1 class="title">② 開発環境 — AI開発者タウン</h1>
+      <h1 class="title">③ 開発環境 — AI開発者タウン</h1>
       <p class="lede">モデルの力を実際の開発作業に変換するツール群。</p>
       <div class="tiles" style="grid-template-columns: repeat(3, 1fr);">
         <button class="pcard" data-goto="page-claude-code-devtool">
@@ -167,6 +269,7 @@
           <span class="go-label">詳細を見る →</span>
         </button>
       </div>
+      <div class="compare-links"></div>
     </section>
     <section class="page detail" id="page-claude-code-devtool" data-title="Claude Code" data-parent="page-area-devtools">
       <div class="detail-head">
@@ -191,7 +294,7 @@
         </div>
       </div>
       <p class="lede">OpenAI版のコーディングエージェント。ChatGPTとの連携やクラウド実行の統合が深い。</p>
-      <div class="factbox"><div class="row"><span>バージョン</span><span>— 系</span></div><div class="row"><span>ステータス</span><span>直近ニュースあり（07月更新）</span></div><div class="row"><span>出典</span><span>Vault/04 Comparisons/開発AI比較_Cursor_ClaudeCode_Codex_Devin.md</span></div>
+      <div class="factbox"><div class="row"><span>バージョン</span><span>— 系</span></div><div class="row"><span>ステータス</span><span>直近ニュースあり（07月更新）</span></div><div class="row"><span>出典</span><span>Vault/01 Concepts/Codex.md</span></div><div class="row"><span>出典</span><span>Vault/04 Comparisons/開発AI比較_Cursor_ClaudeCode_Codex_Devin.md</span></div>
       </div>
       <div class="related"><a href="#" data-goto="page-claude-code-devtool">→ Claude Codeと比較する</a><a href="#" data-goto="page-area-devtools">→ 開発環境一覧に戻る</a>
       </div>
@@ -208,6 +311,167 @@
       <div class="factbox"><div class="row"><span>バージョン</span><span>— 系</span></div><div class="row"><span>ステータス</span><span>安定運用・変化なし</span></div><div class="row"><span>出典</span><span>Vault/01 Concepts/Cursor.md</span></div>
       </div>
       <div class="related"><a href="#" data-goto="page-area-devtools">→ 開発環境一覧に戻る</a>
+      </div>
+    </section>
+    <section class="page" id="page-area-tools" data-title="ツール・サービス" data-parent="page-overview">
+      <h1 class="title">④ ツール・サービス — MCP港</h1>
+      <p class="lede">AIがつながる先の道具箱。開発・仕事で使う定番サービス群。</p>
+      <div class="tiles" style="grid-template-columns: repeat(4, 1fr);">
+        <button class="pcard" data-goto="page-github">
+          <div class="pin-row"><span class="pin stable"></span><span class="pin-label">Stable</span></div>
+          <span class="badge-icon " style="background:#181717">G</span>
+          <h3>GitHub</h3>
+          <p class="desc">GitHub — コードのバージョン管理・共有プラットフォーム。個人の学習からOSS・企業開発まで、AIコーディングツールの共通の置き場所。</p>
+          <span class="go-label">詳細を見る →</span>
+        </button>
+        <button class="pcard" data-goto="page-notion">
+          <div class="pin-row"><span class="pin stable"></span><span class="pin-label">Stable</span></div>
+          <span class="badge-icon " style="background:#191919">N</span>
+          <h3>Notion</h3>
+          <p class="desc">Notion — メモ・文書・タスク管理・DBを1つにまとめるワークスペース。AI連携での情報整理の自動化が進む。</p>
+          <span class="go-label">詳細を見る →</span>
+        </button>
+        <button class="pcard" data-goto="page-slack">
+          <div class="pin-row"><span class="pin stable"></span><span class="pin-label">Stable</span></div>
+          <span class="badge-icon " style="background:#4A154B">S</span>
+          <h3>Slack</h3>
+          <p class="desc">Slack — チーム向けチャットツール。チャンネル単位の会話整理と、AIボット連携での自動化が広がる。</p>
+          <span class="go-label">詳細を見る →</span>
+        </button>
+        <button class="pcard" data-goto="page-google-drive">
+          <div class="pin-row"><span class="pin stable"></span><span class="pin-label">Stable</span></div>
+          <span class="badge-icon " style="background:#0F9D58">G</span>
+          <h3>Google Drive</h3>
+          <p class="desc">Google — Googleのクラウドストレージ。文書類の保存・共同編集の基盤で、AIによる要約・検索の対象にもなる。</p>
+          <span class="go-label">詳細を見る →</span>
+        </button>
+      </div>
+      <div class="compare-links"></div>
+    </section>
+    <section class="page detail" id="page-github" data-title="GitHub" data-parent="page-area-tools">
+      <div class="detail-head">
+        <span class="badge-icon " style="background:#181717">G</span>
+        <div>
+          <h1 class="title">GitHub</h1>
+          <span class="meta">GitHub ／ カテゴリ: ツール・サービス</span>
+        </div>
+      </div>
+      <p class="lede">コードのバージョン管理・共有プラットフォーム。個人の学習からOSS・企業開発まで、AIコーディングツールの共通の置き場所。</p>
+      <div class="factbox"><div class="row"><span>ステータス</span><span>安定運用・変化なし</span></div><div class="row"><span>出典</span><span>Vault/01 Concepts/GitHub.md</span></div>
+      </div>
+      <div class="related"><a href="#" data-goto="page-area-tools">→ ツール・サービス一覧に戻る</a>
+      </div>
+    </section>
+    <section class="page detail" id="page-notion" data-title="Notion" data-parent="page-area-tools">
+      <div class="detail-head">
+        <span class="badge-icon " style="background:#191919">N</span>
+        <div>
+          <h1 class="title">Notion</h1>
+          <span class="meta">Notion ／ カテゴリ: ツール・サービス</span>
+        </div>
+      </div>
+      <p class="lede">メモ・文書・タスク管理・DBを1つにまとめるワークスペース。AI連携での情報整理の自動化が進む。</p>
+      <div class="factbox"><div class="row"><span>ステータス</span><span>安定運用・変化なし</span></div><div class="row"><span>出典</span><span>Vault/01 Concepts/Notion.md</span></div>
+      </div>
+      <div class="related"><a href="#" data-goto="page-area-tools">→ ツール・サービス一覧に戻る</a>
+      </div>
+    </section>
+    <section class="page detail" id="page-slack" data-title="Slack" data-parent="page-area-tools">
+      <div class="detail-head">
+        <span class="badge-icon " style="background:#4A154B">S</span>
+        <div>
+          <h1 class="title">Slack</h1>
+          <span class="meta">Slack ／ カテゴリ: ツール・サービス</span>
+        </div>
+      </div>
+      <p class="lede">チーム向けチャットツール。チャンネル単位の会話整理と、AIボット連携での自動化が広がる。</p>
+      <div class="factbox"><div class="row"><span>ステータス</span><span>安定運用・変化なし</span></div><div class="row"><span>出典</span><span>Vault/01 Concepts/Slack.md</span></div>
+      </div>
+      <div class="related"><a href="#" data-goto="page-area-tools">→ ツール・サービス一覧に戻る</a>
+      </div>
+    </section>
+    <section class="page detail" id="page-google-drive" data-title="Google Drive" data-parent="page-area-tools">
+      <div class="detail-head">
+        <span class="badge-icon " style="background:#0F9D58">G</span>
+        <div>
+          <h1 class="title">Google Drive</h1>
+          <span class="meta">Google ／ カテゴリ: ツール・サービス</span>
+        </div>
+      </div>
+      <p class="lede">Googleのクラウドストレージ。文書類の保存・共同編集の基盤で、AIによる要約・検索の対象にもなる。</p>
+      <div class="factbox"><div class="row"><span>ステータス</span><span>安定運用・変化なし</span></div><div class="row"><span>出典</span><span>Vault/01 Concepts/Google Drive.md</span></div>
+      </div>
+      <div class="related"><a href="#" data-goto="page-area-tools">→ ツール・サービス一覧に戻る</a>
+      </div>
+    </section>
+    <section class="page" id="page-area-cloud" data-title="クラウド" data-parent="page-overview">
+      <h1 class="title">⑤ クラウド — クラウド王国</h1>
+      <p class="lede">データを保存し、AIを動かす計算資源を提供する基盤。</p>
+      <div class="tiles" style="grid-template-columns: repeat(3, 1fr);">
+        <button class="pcard" data-goto="page-aws">
+          <div class="pin-row"><span class="pin stable"></span><span class="pin-label">Stable</span></div>
+          <span class="badge-icon " style="background:#FF9900">A</span>
+          <h3>AWS</h3>
+          <p class="desc">Amazon — Amazonのクラウド基盤。サーバー・DB・AI関連サービスを従量課金で利用でき、多くのAIサービスの裏側を支える。</p>
+          <span class="go-label">詳細を見る →</span>
+        </button>
+        <button class="pcard" data-goto="page-azure">
+          <div class="pin-row"><span class="pin stable"></span><span class="pin-label">Stable</span></div>
+          <span class="badge-icon " style="background:#0078D4">A</span>
+          <h3>Azure</h3>
+          <p class="desc">Microsoft — Microsoftのクラウド基盤。OpenAIモデルの主要な提供経路の一つで、企業向けAI導入の中心的存在。</p>
+          <span class="go-label">詳細を見る →</span>
+        </button>
+        <button class="pcard" data-goto="page-google-cloud">
+          <div class="pin-row"><span class="pin stable"></span><span class="pin-label">Stable</span></div>
+          <span class="badge-icon " style="background:#4285F4">G</span>
+          <h3>Google Cloud</h3>
+          <p class="desc">Google — Googleのクラウド基盤。Gemini等の自社AIモデルとネイティブに統合され、データ分析・機械学習基盤としても利用される。</p>
+          <span class="go-label">詳細を見る →</span>
+        </button>
+      </div>
+      <div class="compare-links"></div>
+    </section>
+    <section class="page detail" id="page-aws" data-title="AWS" data-parent="page-area-cloud">
+      <div class="detail-head">
+        <span class="badge-icon " style="background:#FF9900">A</span>
+        <div>
+          <h1 class="title">AWS</h1>
+          <span class="meta">Amazon ／ カテゴリ: クラウド</span>
+        </div>
+      </div>
+      <p class="lede">Amazonのクラウド基盤。サーバー・DB・AI関連サービスを従量課金で利用でき、多くのAIサービスの裏側を支える。</p>
+      <div class="factbox"><div class="row"><span>ステータス</span><span>安定運用・変化なし</span></div><div class="row"><span>出典</span><span>Vault/01 Concepts/AWS.md</span></div>
+      </div>
+      <div class="related"><a href="#" data-goto="page-azure">→ Azureと比較する</a><a href="#" data-goto="page-google-cloud">→ Google Cloudと比較する</a><a href="#" data-goto="page-area-cloud">→ クラウド一覧に戻る</a>
+      </div>
+    </section>
+    <section class="page detail" id="page-azure" data-title="Azure" data-parent="page-area-cloud">
+      <div class="detail-head">
+        <span class="badge-icon " style="background:#0078D4">A</span>
+        <div>
+          <h1 class="title">Azure</h1>
+          <span class="meta">Microsoft ／ カテゴリ: クラウド</span>
+        </div>
+      </div>
+      <p class="lede">Microsoftのクラウド基盤。OpenAIモデルの主要な提供経路の一つで、企業向けAI導入の中心的存在。</p>
+      <div class="factbox"><div class="row"><span>ステータス</span><span>安定運用・変化なし</span></div><div class="row"><span>出典</span><span>Vault/01 Concepts/Azure.md</span></div>
+      </div>
+      <div class="related"><a href="#" data-goto="page-aws">→ AWSと比較する</a><a href="#" data-goto="page-google-cloud">→ Google Cloudと比較する</a><a href="#" data-goto="page-area-cloud">→ クラウド一覧に戻る</a>
+      </div>
+    </section>
+    <section class="page detail" id="page-google-cloud" data-title="Google Cloud" data-parent="page-area-cloud">
+      <div class="detail-head">
+        <span class="badge-icon " style="background:#4285F4">G</span>
+        <div>
+          <h1 class="title">Google Cloud</h1>
+          <span class="meta">Google ／ カテゴリ: クラウド</span>
+        </div>
+      </div>
+      <p class="lede">Googleのクラウド基盤。Gemini等の自社AIモデルとネイティブに統合され、データ分析・機械学習基盤としても利用される。</p>
+      <div class="factbox"><div class="row"><span>ステータス</span><span>安定運用・変化なし</span></div><div class="row"><span>出典</span><span>Vault/01 Concepts/Google Cloud.md</span></div>
+      </div>
+      <div class="related"><a href="#" data-goto="page-aws">→ AWSと比較する</a><a href="#" data-goto="page-azure">→ Azureと比較する</a><a href="#" data-goto="page-area-cloud">→ クラウド一覧に戻る</a>
       </div>
     </section>
     </div>

@@ -1,0 +1,56 @@
+# One comparison table per entry, transcribed from a Vault comparison
+# note (04 Comparisons/). `area` must match an areas.yaml id; `columns`
+# lists character slugs in display order. Re-transcribe by hand when the
+# source note changes — Vault stays read-only, this is our display copy.
+
+- id: llm-models
+  area: models
+  title: 主要商用LLMの比較
+  subtitle: GPT・Claude・Gemini
+  source_note: "Vault/04 Comparisons/LLM比較- GPT・Claude・Gemini.md"
+  columns: [claude-model, gpt-model, gemini-model]
+  axes:
+    - label: 主な強み
+      values:
+        claude-model: 長文処理・要約
+        gpt-model: 汎用性・開発者エコシステム
+        gemini-model: Google連携・マルチモーダル
+    - label: 長文コンテキスト傾向
+      values:
+        claude-model: 非常に大きい
+        gpt-model: 大きい
+        gemini-model: 非常に大きい
+    - label: マルチモーダル対応
+      values:
+        claude-model: 対応あり
+        gpt-model: 強い
+        gemini-model: 強い
+    - label: コード支援
+      values:
+        claude-model: 強い
+        gpt-model: 強い
+        gemini-model: 強い
+    - label: エコシステム普及
+      values:
+        claude-model: 広い
+        gpt-model: 非常に広い
+        gemini-model: 広い
+    - label: クラウド/業務連携
+      values:
+        claude-model: API中心
+        gpt-model: Microsoft/Azure中心
+        gemini-model: Google Cloud/Workspace中心
+    - label: 得意な利用場面
+      values:
+        claude-model: 長文分析・文書作業
+        gpt-model: 汎用アプリ開発
+        gemini-model: Google基盤の組み込み
+    - label: 注意点
+      values:
+        claude-model: 地域・提供差がある
+        gpt-model: モデル差が大きい
+        gemini-model: 製品名/系統が変わりやすい
+  verdicts:
+    claude-model: 長文の読解・要約・文書作業を重視するなら候補
+    gpt-model: 汎用API・豊富なSDK・実績重視なら第一候補
+    gemini-model: Google Cloud/Workspace統合や画像を含むマルチモーダル処理を重視するなら候補

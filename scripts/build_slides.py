@@ -27,6 +27,8 @@ def load_data():
     world = yaml.safe_load((DATA_DIR / "world.yaml").read_text(encoding="utf-8"))
     areas = yaml.safe_load((DATA_DIR / "areas.yaml").read_text(encoding="utf-8"))
     characters = yaml.safe_load((DATA_DIR / "characters.yaml").read_text(encoding="utf-8"))
+    comparisons_path = DATA_DIR / "comparisons.yaml"
+    comparisons = yaml.safe_load(comparisons_path.read_text(encoding="utf-8")) if comparisons_path.exists() else []
     areas.sort(key=lambda a: a["order"])
 
     by_category = {}
@@ -35,7 +37,11 @@ def load_data():
         by_category.setdefault(c["category"], []).append(c)
         by_slug[c["slug"]] = c
 
-    return world, areas, characters, by_category, by_slug
+    comparisons_by_area = {}
+    for comp in comparisons:
+        comparisons_by_area.setdefault(comp["area"], []).append(comp)
+
+    return world, areas, characters, by_category, by_slug, comparisons_by_area
 
 
 def e(text):
@@ -101,7 +107,7 @@ def render_overview(world, areas):
     </section>"""
 
 
-def render_area_page(area, members, area_index):
+def render_area_page(area, members, area_index, comparisons):
     glyph = CIRCLED_DIGITS[area_index] if area_index < len(CIRCLED_DIGITS) else str(area_index + 1)
     cards = []
     for m in members:
@@ -114,6 +120,12 @@ def render_area_page(area, members, area_index):
           <span class="go-label">詳細を見る →</span>
         </button>""")
 
+    compare_links = "".join(
+        f'<button class="compare-link" data-goto="page-compare-{e(comp["id"])}">'
+        f'📊 比較して見る: {e(comp["title"])}（{e(comp["subtitle"])}） →</button>'
+        for comp in comparisons
+    )
+
     cls, style, data_has_bg = bg_attrs(area.get("background_path"))
     world_name = area.get("world_name")
     heading = f"{glyph} {e(area['title'])}" + (f" — {e(world_name)}" if world_name else "")
@@ -124,14 +136,20 @@ def render_area_page(area, members, area_index):
       <p class="lede">{e(area['lede'])}</p>
       <div class="tiles"{grid_style}>{''.join(cards)}
       </div>
+      <div class="compare-links">{compare_links}</div>
     </section>"""
 
 
 def render_detail_page(entity, area, by_slug):
-    rows = [
-        f'<div class="row"><span>バージョン</span><span>{e(entity["version"])}</span></div>',
-        f'<div class="row"><span>ステータス</span><span>{e(entity["status_label"])}</span></div>',
-    ]
+    rows = []
+    if entity.get("variants"):
+        # A model family (e.g. Claude's Haiku/Sonnet/Opus/Fable) rather than
+        # a single version — list each tier with its own one-line character.
+        for v in entity["variants"]:
+            rows.append(f'<div class="row"><span>{e(v["name"])}</span><span>{e(v["tagline"])}</span></div>')
+    elif entity.get("version"):
+        rows.append(f'<div class="row"><span>バージョン</span><span>{e(entity["version"])}</span></div>')
+    rows.append(f'<div class="row"><span>ステータス</span><span>{e(entity["status_label"])}</span></div>')
     for note in entity.get("source_notes") or []:
         rows.append(f'<div class="row"><span>出典</span><span>{e(note)}</span></div>')
 
@@ -166,15 +184,54 @@ def render_detail_page(entity, area, by_slug):
     </section>"""
 
 
+def render_comparison_page(comp, area, by_slug):
+    columns = comp["columns"]
+    entities = [by_slug[slug] for slug in columns]
+
+    head_cells = "".join(
+        f'<th><span class="model-head">'
+        f'<span class="dot" style="background:{e(ent["brand_color"])}"></span>{e(ent["name"])}</span></th>'
+        for ent in entities
+    )
+
+    body_rows = []
+    for axis in comp["axes"]:
+        cells = "".join(f'<td>{e(axis["values"].get(slug, "—"))}</td>' for slug in columns)
+        body_rows.append(f'<tr><td class="row-label">{e(axis["label"])}</td>{cells}</tr>')
+
+    verdicts = comp.get("verdicts") or {}
+    if verdicts:
+        cells = "".join(f'<td>{e(verdicts.get(slug, "—"))}</td>' for slug in columns)
+        body_rows.append(f'<tr><td class="row-label">こんな時に</td>{cells}</tr>')
+
+    return f"""
+    <section class="page" id="page-compare-{e(comp['id'])}" data-title="{e(comp['title'])}" data-parent="page-area-{e(area['id'])}">
+      <h1 class="title">{e(comp['title'])}</h1>
+      <p class="lede">{e(comp['subtitle'])} ／ 出典: {e(comp['source_note'])}</p>
+      <div class="compare-table-wrap">
+        <table class="compare">
+          <thead><tr><th class="row-label"></th>{head_cells}</tr></thead>
+          <tbody>{''.join(body_rows)}</tbody>
+        </table>
+      </div>
+      <div class="related">
+        <a href="#" data-goto="page-area-{e(area['id'])}">→ {e(area['title'])}一覧に戻る</a>
+      </div>
+    </section>"""
+
+
 def build():
-    world, areas, characters, by_category, by_slug = load_data()
+    world, areas, characters, by_category, by_slug, comparisons_by_area = load_data()
 
     pages_html = [render_overview(world, areas)]
     for i, area in enumerate(areas):
         members = by_category.get(area["id"], [])
-        pages_html.append(render_area_page(area, members, i))
+        comparisons = comparisons_by_area.get(area["id"], [])
+        pages_html.append(render_area_page(area, members, i, comparisons))
         for m in members:
             pages_html.append(render_detail_page(m, area, by_slug))
+        for comp in comparisons:
+            pages_html.append(render_comparison_page(comp, area, by_slug))
 
     doc = f"""<!doctype html>
 <html lang="ja">

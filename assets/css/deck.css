@@ -224,6 +224,57 @@ body { margin: 0; }
 .pin.watch { background: var(--pin-watch); }
 .pin-label { font-family: var(--font-mono); font-size: clamp(8.5px, 0.95cqw, 10.5px); text-transform: uppercase; letter-spacing: 0.05em; color: var(--ink-faint); }
 
+/* ---- comparison entry point (on an area page) ---- */
+.compare-links { display: flex; flex-direction: column; gap: 0.5cqh; margin-top: 1.4cqh; }
+.compare-link {
+  font-family: var(--font-body);
+  font-size: clamp(10.5px, 1.3cqw, 13px);
+  text-align: left;
+  background: var(--surface-raised);
+  border: 1px solid var(--hairline-strong);
+  border-radius: 6px;
+  padding: 0.9cqh 1.2cqw;
+  color: var(--ink);
+  cursor: pointer;
+}
+.compare-link:hover { border-color: var(--accent-teal); }
+
+/* ---- comparison page (table) ---- */
+.compare-table-wrap {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  border: 1px solid var(--hairline-strong);
+  border-radius: 6px;
+  background: var(--surface);
+}
+table.compare { width: 100%; border-collapse: collapse; font-size: clamp(9.5px, 1.15cqw, 12.5px); }
+.compare th, .compare td {
+  padding: 0.7cqh 1cqw;
+  border-bottom: 1px solid var(--hairline);
+  text-align: left;
+  vertical-align: top;
+  line-height: 1.4;
+}
+.compare thead th {
+  position: sticky; top: 0;
+  background: var(--surface-raised);
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(11px, 1.4cqw, 15px);
+  border-bottom: 1px solid var(--hairline-strong);
+}
+.compare td.row-label, .compare th.row-label {
+  font-family: var(--font-mono);
+  font-size: clamp(8.5px, 0.95cqw, 10.5px);
+  color: var(--ink-faint);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+.compare .model-head { display: flex; align-items: center; gap: 6px; }
+.compare .model-head .dot { width: 8px; height: 8px; border-radius: 50%; flex: none; }
+
 /* ---- detail page ---- */
 .detail-head { display: flex; align-items: center; gap: 1.4cqw; margin-bottom: 1.6cqh; }
 .detail-head .badge-icon { width: 7cqw; height: 7cqw; min-width: 56px; min-height: 56px; font-size: clamp(18px, 3cqw, 30px); }

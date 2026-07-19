@@ -39,19 +39,28 @@
   category: models
   brand_color: "#D97757"
   accessory: 丸メガネ
-  version: "Sonnet 5 系"
+  variants:
+    - name: Haiku 4.5
+      tagline: 最軽量・低コスト・低レイテンシ。大量処理や単純タスク向け
+    - name: Sonnet 5
+      tagline: 汎用バランス型。速度・コスト・性能のバランスが良く通常利用の主力
+    - name: Opus 4.8
+      tagline: 最高性能。複雑な推論や長時間の自律タスク向け
+    - name: Fable 5
+      tagline: "（要確認・仮）対話や創作寄りの特化モデルという理解"
   status: updated
   status_label: 直近ニュースあり（07月更新）
   summary: 推論と長文コンテキストに強み。Sonnet / Opus / Haiku の三段構成でコスト対応力を確保。
   source_notes:
+    - "Vault/01 Concepts/Claude.md"
     - "Vault/06 News/Claude Science.md"
   related: [gpt-model]
   image_path: assets/characters/models/claude.png
-  source_crop: references/claude-model-source-crop.png
+  source_crop: references/model-claude-source-crop.png
   source_conversation: https://chatgpt.com/share/6a5c27f7-3ae8-83e8-8fd2-a88357276ef5
   generated_with: "ChatGPT (image-to-image from source_crop), 2026-07-19"
   prompt: |
-    Image-to-image from references/claude-model-source-crop.png (the
+    Image-to-image from references/model-claude-source-crop.png (the
     brain-creature character cropped out of the original "AI頭脳学園"
     illustration). Instruction: keep the character close to the source
     crop rather than re-deriving it from a text description — an
@@ -69,22 +78,23 @@
   status_label: 直近ニュースあり（07月更新）
   summary: 汎用性とマルチモーダルの王道。ChatGPT と API エコシステムの両輪で市場を牽引。
   source_notes:
+    - "Vault/01 Concepts/GPT.md"
     - "Vault/06 News/GPT-5.6.md"
   related: [claude-model]
   image_path: assets/characters/models/gpt.png
+  source_crop: references/model-gpt-source-crop.png
   generated_with: ""
   prompt: |
-    Flat-shaded chibi mascot character illustration. A soft, rounded,
-    fluffy cloud/brain-shaped creature body with thick clean black
-    outlines and soft cel-shading. Simple two-dot eyes and a small
-    friendly smile. Single character, full body, centered, facing
-    forward at a slight 3/4 angle. Plain flat light cream background,
-    no shadow, isolated illustration suitable for cutting out, no text,
-    no logos, no watermark.
-    The body is colored in a muted sage-teal green (#74AA9C). It has a
-    bright, energetic, all-purpose expression, with a few tiny glowing
-    multicolor sparkle dots floating around its head representing
-    versatility. No other accessories.
+    Image-to-image from references/model-gpt-source-crop.png (the
+    magician-styled character cropped out of the original "AI頭脳学園"
+    illustration: top hat, bow tie, magic wand). Keep the magician
+    costume as-is — "generative AI conjuring things out of nowhere" is
+    a deliberate metaphor for GPT ("Generative" Pre-trained
+    Transformer). One change: replace the star at the tip of the wand
+    with a small burst of glowing, multicolor light-particle dots
+    (not star-shaped) — a star would visually collide with Gemini's
+    twin-star motif below, and light particles still represent
+    versatility/multimodality as originally intended.
 
 - slug: gemini-model
   name: Gemini
@@ -97,22 +107,22 @@
   status_label: 直近ニュースあり（07月更新）
   summary: Google製品群へのネイティブ統合。Computer Use 系の操作能力を急速に強化中。
   source_notes:
+    - "Vault/01 Concepts/Gemini.md"
     - "Vault/06 News/Gemini 3.5 Flash、Computer Use統合.md"
   related: [claude-model, gpt-model]
   image_path: assets/characters/models/gemini.png
+  source_crop: references/model-gemini-source-crop.png
   generated_with: ""
   prompt: |
-    Flat-shaded chibi mascot character illustration. A soft, rounded,
-    fluffy cloud/brain-shaped creature body with thick clean black
-    outlines and soft cel-shading. Simple two-dot eyes and a small
-    friendly smile. Single character, full body, centered, facing
-    forward at a slight 3/4 angle. Plain flat light cream background,
-    no shadow, isolated illustration suitable for cutting out, no text,
-    no logos, no watermark.
-    The body is colored in a vivid sky blue (#3186FF), the same rounded
-    cloud/brain shape as the others. It has two small twinkling
-    star-shaped ornaments floating above its head, one on each side,
-    representing a pair of twins. No other accessories.
+    Image-to-image from references/model-gemini-source-crop.png (the
+    explorer-styled character cropped out of the original "AI頭脳学園"
+    illustration: safari hat, magnifying glass, backpack). Keep the
+    safari hat and backpack. Remove the magnifying glass — that
+    accessory is reserved for DeepSeek instead. Add two small
+    twinkling star-shaped ornaments floating above its head, one on
+    each side, representing a pair of twins, since "Gemini" refers to
+    the twins of the zodiac. This is the deliberate, agreed
+    differentiator for Gemini.
 
 - slug: llama-model
   name: Llama
@@ -124,9 +134,11 @@
   status: stable
   status_label: 安定運用・変化なし
   summary: オープンウェイトの主流。自前ホスティングや微調整の土台として定番の地位を維持。
-  source_notes: []
+  source_notes:
+    - "Vault/01 Concepts/Llama.md"
   related: [deepseek-model]
   image_path: assets/characters/models/llama.png
+  source_crop: references/model-llama-source-crop.png
   generated_with: ""
   prompt: |
     Flat-shaded chibi mascot character illustration. A soft, rounded,
@@ -207,6 +219,7 @@
   status_label: 直近ニュースあり（07月更新）
   summary: OpenAI版のコーディングエージェント。ChatGPTとの連携やクラウド実行の統合が深い。
   source_notes:
+    - "Vault/01 Concepts/Codex.md"
     - "Vault/04 Comparisons/開発AI比較_Cursor_ClaudeCode_Codex_Devin.md"
   related: [claude-code-devtool]
   family_of: gpt-model
@@ -251,3 +264,174 @@
     The body is colored in high-contrast black and white, split
     roughly down the middle. It has a small pointed cursor-arrow
     shaped tail. No other accessories.
+
+# ---- chat: same AI, framed as a chat interface rather than a model.
+# Reuses the model's brand_color and mascot family; accessory motif is
+# a coffee cup (cafe/conversation theme, matching "おしゃべり広場").
+# No source_crop chosen yet — see docs/image-todo.md.
+
+- slug: claude-chat
+  name: Claude
+  org: Anthropic
+  category: chat
+  brand_color: "#D97757"
+  accessory: コーヒーカップ
+  version: "Claude.ai"
+  status: updated
+  status_label: 直近ニュースあり（07月更新）
+  summary: Anthropicの対話インターフェース。Claude.aiとして提供され、質問応答・要約・文章作成などをチャット形式で行える。
+  source_notes:
+    - "Vault/01 Concepts/Claude.md"
+  related: [chatgpt-chat, gemini-chat]
+  family_of: claude-model
+  image_path: assets/characters/chat/claude-chat.png
+  generated_with: ""
+  prompt: ""
+
+- slug: chatgpt-chat
+  name: ChatGPT
+  org: OpenAI
+  category: chat
+  brand_color: "#74AA9C"
+  accessory: コーヒーカップ
+  version: "chat.openai.com"
+  status: updated
+  status_label: 直近ニュースあり（07月更新）
+  summary: OpenAIの対話型チャットボット。自然な会話で質問応答・文章作成・要約・翻訳・アイデア出しなどをこなす、最も広く使われるAIチャット。
+  source_notes:
+    - "Vault/01 Concepts/ChatGPT.md"
+  related: [claude-chat, gemini-chat]
+  family_of: gpt-model
+  image_path: assets/characters/chat/chatgpt-chat.png
+  generated_with: ""
+  prompt: ""
+
+- slug: gemini-chat
+  name: Gemini
+  org: Google
+  category: chat
+  brand_color: "#3186FF"
+  accessory: コーヒーカップ
+  version: "gemini.google.com"
+  status: updated
+  status_label: 直近ニュースあり（07月更新）
+  summary: Googleの対話アシスタント。検索・Workspace・Androidと連携し、テキスト以外に画像なども扱えるマルチモーダルな対話が特徴。
+  source_notes:
+    - "Vault/01 Concepts/Gemini.md"
+  related: [claude-chat, chatgpt-chat]
+  family_of: gemini-model
+  image_path: assets/characters/chat/gemini-chat.png
+  generated_with: ""
+  prompt: ""
+
+# ---- tools: generic productivity services, not part of a model family.
+# Represented as brand-color badges rather than mascot characters (the
+# original illustration draws this area with real service logos, not
+# custom creatures) — see docs/image-todo.md for the open design question.
+
+- slug: github
+  name: GitHub
+  org: GitHub
+  category: tools
+  brand_color: "#181717"
+  status: stable
+  status_label: 安定運用・変化なし
+  summary: コードのバージョン管理・共有プラットフォーム。個人の学習からOSS・企業開発まで、AIコーディングツールの共通の置き場所。
+  source_notes:
+    - "Vault/01 Concepts/GitHub.md"
+  related: []
+  image_path: assets/characters/tools/github.png
+  generated_with: ""
+  prompt: ""
+
+- slug: notion
+  name: Notion
+  org: Notion
+  category: tools
+  brand_color: "#191919"
+  status: stable
+  status_label: 安定運用・変化なし
+  summary: メモ・文書・タスク管理・DBを1つにまとめるワークスペース。AI連携での情報整理の自動化が進む。
+  source_notes:
+    - "Vault/01 Concepts/Notion.md"
+  related: []
+  image_path: assets/characters/tools/notion.png
+  generated_with: ""
+  prompt: ""
+
+- slug: slack
+  name: Slack
+  org: Slack
+  category: tools
+  brand_color: "#4A154B"
+  status: stable
+  status_label: 安定運用・変化なし
+  summary: チーム向けチャットツール。チャンネル単位の会話整理と、AIボット連携での自動化が広がる。
+  source_notes:
+    - "Vault/01 Concepts/Slack.md"
+  related: []
+  image_path: assets/characters/tools/slack.png
+  generated_with: ""
+  prompt: ""
+
+- slug: google-drive
+  name: Google Drive
+  org: Google
+  category: tools
+  brand_color: "#0F9D58"
+  status: stable
+  status_label: 安定運用・変化なし
+  summary: Googleのクラウドストレージ。文書類の保存・共同編集の基盤で、AIによる要約・検索の対象にもなる。
+  source_notes:
+    - "Vault/01 Concepts/Google Drive.md"
+  related: []
+  image_path: assets/characters/tools/google-drive.png
+  generated_with: ""
+  prompt: ""
+
+# ---- cloud: infrastructure providers underpinning everything above.
+
+- slug: aws
+  name: AWS
+  org: Amazon
+  category: cloud
+  brand_color: "#FF9900"
+  status: stable
+  status_label: 安定運用・変化なし
+  summary: Amazonのクラウド基盤。サーバー・DB・AI関連サービスを従量課金で利用でき、多くのAIサービスの裏側を支える。
+  source_notes:
+    - "Vault/01 Concepts/AWS.md"
+  related: [azure, google-cloud]
+  image_path: assets/characters/cloud/aws.png
+  generated_with: ""
+  prompt: ""
+
+- slug: azure
+  name: Azure
+  org: Microsoft
+  category: cloud
+  brand_color: "#0078D4"
+  status: stable
+  status_label: 安定運用・変化なし
+  summary: Microsoftのクラウド基盤。OpenAIモデルの主要な提供経路の一つで、企業向けAI導入の中心的存在。
+  source_notes:
+    - "Vault/01 Concepts/Azure.md"
+  related: [aws, google-cloud]
+  image_path: assets/characters/cloud/azure.png
+  generated_with: ""
+  prompt: ""
+
+- slug: google-cloud
+  name: Google Cloud
+  org: Google
+  category: cloud
+  brand_color: "#4285F4"
+  status: stable
+  status_label: 安定運用・変化なし
+  summary: Googleのクラウド基盤。Gemini等の自社AIモデルとネイティブに統合され、データ分析・機械学習基盤としても利用される。
+  source_notes:
+    - "Vault/01 Concepts/Google Cloud.md"
+  related: [aws, azure]
+  image_path: assets/characters/cloud/google-cloud.png
+  generated_with: ""
+  prompt: ""

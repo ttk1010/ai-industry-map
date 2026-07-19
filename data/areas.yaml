@@ -37,8 +37,27 @@
     particles suggesting knowledge, distant rolling hills under a pastel
     sky.
 
-- id: devtools
+- id: chat
   order: 2
+  title: チャットアシスタント
+  world_name: AIおしゃべり広場
+  subtitle: 対話インターフェースとしてのAI
+  lede: 同じAIでも「モデル」ではなく「話し相手」として使う入り口。
+  background_path: assets/backgrounds/chat.png
+  generated_with: ""
+  background_prompt: |
+    Wide flat-color illustrated background scene, warm inviting storybook
+    style, soft painterly shading, gentle depth with layered midground and
+    background elements, no characters, no people, no text, no logos, soft
+    diffused lighting, slightly whimsical and cheerful mood, 16:9 landscape
+    composition with open sky in the upper portion.
+    A cheerful town square with a cozy outdoor cafe: round cafe tables
+    with striped umbrellas, warm string lights strung between lamp
+    posts, a small fountain in the center, flower planters, cobblestone
+    plaza, pastel-colored building facades under a bright blue sky.
+
+- id: devtools
+  order: 3
   title: 開発環境
   world_name: AI開発者タウン
   subtitle: コーディングエージェント／IDEの現在地
@@ -56,3 +75,41 @@
     windows, hanging signboards, cobblestone street, scattered tool and
     gear-shaped decorations, string lights overhead, a faint forge glow
     suggesting builders at work.
+
+- id: tools
+  order: 4
+  title: ツール・サービス
+  world_name: MCP港
+  subtitle: いろんな道具・サービスとの連携
+  lede: AIがつながる先の道具箱。開発・仕事で使う定番サービス群。
+  background_path: assets/backgrounds/tools.png
+  generated_with: ""
+  background_prompt: |
+    Wide flat-color illustrated background scene, warm inviting storybook
+    style, soft painterly shading, gentle depth with layered midground and
+    background elements, no characters, no people, no text, no logos, soft
+    diffused lighting, slightly whimsical and cheerful mood, 16:9 landscape
+    composition with open sky in the upper portion.
+    A bustling small harbor at midday: a wooden pier and lighthouse,
+    docked boats with colorful sails, crates and barrels stacked near
+    the water, seagulls overhead, a calm blue sea meeting a clear sky,
+    warm sunlight glinting off the water.
+
+- id: cloud
+  order: 5
+  title: クラウド
+  world_name: クラウド王国
+  subtitle: 裏方で支えるインターネットの世界
+  lede: データを保存し、AIを動かす計算資源を提供する基盤。
+  background_path: assets/backgrounds/cloud.png
+  generated_with: ""
+  background_prompt: |
+    Wide flat-color illustrated background scene, warm inviting storybook
+    style, soft painterly shading, gentle depth with layered midground and
+    background elements, no characters, no people, no text, no logos, soft
+    diffused lighting, slightly whimsical and cheerful mood, 16:9 landscape
+    composition with open sky in the upper portion.
+    A dreamy castle floating among soft fluffy clouds: pastel-colored
+    turrets with pointed roofs, a drawbridge made of light, rays of
+    sunlight breaking through clouds, small birds flying near the
+    towers, a gentle gradient sky from pale blue to soft pink.
