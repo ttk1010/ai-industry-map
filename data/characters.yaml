@@ -23,6 +23,15 @@
 #                     right point of the star in the official Gemini SVG
 #                     (references/Google_Gemini_logo_2025.svg), confirmed
 #                     by reading the source markup directly.
+#
+# Character art workflow update (2026-07-19): forcing exact brand_color
+# hex codes into a from-scratch text-to-image prompt looked off in
+# practice. The new approach is image-to-image: crop the character out
+# of the original illustrations (saved under references/*-source-crop.png)
+# and feed that crop into ChatGPT, keeping it close to the original
+# rather than re-deriving it from a text description. `prompt` fields
+# below are updated per-entity as each one is redone this way; entries
+# not yet redone still carry the old scratch-generation prompt.
 
 - slug: claude-model
   name: Claude
@@ -38,18 +47,16 @@
     - "Vault/06 News/Claude Science.md"
   related: [gpt-model]
   image_path: assets/characters/models/claude.png
-  generated_with: ""
+  source_crop: references/claude-model-source-crop.png
+  source_conversation: https://chatgpt.com/share/6a5c27f7-3ae8-83e8-8fd2-a88357276ef5
+  generated_with: "ChatGPT (image-to-image from source_crop), 2026-07-19"
   prompt: |
-    Flat-shaded chibi mascot character illustration. A soft, rounded,
-    fluffy cloud/brain-shaped creature body with thick clean black
-    outlines and soft cel-shading. Simple two-dot eyes and a small
-    friendly smile. Single character, full body, centered, facing
-    forward at a slight 3/4 angle. Plain flat light cream background,
-    no shadow, isolated illustration suitable for cutting out, no text,
-    no logos, no watermark.
-    The body is colored in warm terracotta clay orange (#D97757). It
-    wears small round wire-frame glasses, giving a thoughtful, calm
-    expression. No other accessories.
+    Image-to-image from references/claude-model-source-crop.png (the
+    brain-creature character cropped out of the original "AI頭脳学園"
+    illustration). Instruction: keep the character close to the source
+    crop rather than re-deriving it from a text description — an
+    earlier attempt that forced the exact brand_color hex into a
+    from-scratch text prompt looked visually off.
 
 - slug: gpt-model
   name: GPT
