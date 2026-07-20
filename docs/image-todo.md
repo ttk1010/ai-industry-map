@@ -70,22 +70,18 @@ uv run --with pyyaml python3 scripts/build_slides.py
 |---|---|
 | DeepSeek | `assets/characters/models/deepseek.png` |
 
-## 未解決の設計課題: ツール・クラウドは「マスコット」か「実ロゴ」か
+## 解決済み: ツール・クラウドは「マスコット」か「実ロゴ」か → 実ロゴで決着
 
-`ツール・サービス`（GitHub/Notion/Slack/Google Drive）と`クラウド`（AWS/Azure/Google Cloud）は、
-元イラストでは他エリアと違い、キャラクター化せず**実際のサービスロゴのアイコン**として描かれている
-（作業員の動物キャラは1〜2体だけ、道具箱自体はロゴのまま）。
+(2026-07-20 追記) [Simple Icons](https://simpleicons.org/)（CC0）から公式ロゴSVGを取得し、
+`data/characters.yaml` の `logo_path` として全18エンティティに配線した。カスタムマスコットの
+有無に関わらず、バッジの右下に小さくロゴが乗る（`badge_icon()` / `.badge-logo` CSS参照）。
 
-このプロジェクトでも同じ方針で行くなら、この7社分は**AI画像生成が不要**（公式ロゴ素材を
-使うだけ）になる。逆に他エリアと統一感を出すためにマスコット化するなら、7体分のプロンプトを
-新規に考える必要がある。この方針は次回相談してから決める。
+- モデル/開発環境/チャット（マスコットあり）: マスコットが主役、ロゴは隅の小さな確認バッジ
+- ツール・サービス／クラウド（マスコットなし）: 色付きイニシャル＋ロゴバッジで、元イラストの
+  「実ロゴのまま」という表現に近い状態に。**この7社分はAI画像生成が無くても見た目として完成**
+  している。マスコット化したくなったら後からキャラクターを追加すればよい（任意）。
 
-| 対象 | 保存先候補 | 備考 |
-|---|---|---|
-| GitHub | `assets/characters/tools/github.png` | 方針未決定 |
-| Notion | `assets/characters/tools/notion.png` | 方針未決定 |
-| Slack | `assets/characters/tools/slack.png` | 方針未決定 |
-| Google Drive | `assets/characters/tools/google-drive.png` | 方針未決定 |
-| AWS | `assets/characters/cloud/aws.png` | 方針未決定 |
-| Azure | `assets/characters/cloud/azure.png` | 方針未決定 |
-| Google Cloud | `assets/characters/cloud/google-cloud.png` | 方針未決定 |
+取得済みロゴ一覧（`assets/logos/<slug>.svg`）: claude-model, gpt-model, gemini-model,
+llama-model, deepseek-model, claude-code-devtool, codex-devtool, cursor-devtool,
+claude-chat, chatgpt-chat, gemini-chat, github, notion, slack, google-drive, aws, azure,
+google-cloud（出典は`references/SOURCES.md`）。

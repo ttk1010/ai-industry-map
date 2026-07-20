@@ -240,6 +240,30 @@ body { margin: 0; }
   box-shadow: 0 0 0 3px var(--surface), 0 4px 10px rgba(31, 84, 138, 0.22);
 }
 
+/* Official logo, layered as a small corner badge on the custom mascot —
+   the illustration stays primary, the logo just confirms who it is. */
+.badge-wrap { position: relative; display: inline-flex; flex: none; align-self: flex-start; }
+.badge-logo {
+  position: absolute;
+  right: -8%;
+  bottom: -8%;
+  width: 44%;
+  height: 44%;
+  min-width: 15px;
+  min-height: 15px;
+  border-radius: 50%;
+  background: var(--surface-raised);
+  box-shadow: 0 0 0 2px var(--surface-raised), 0 2px 6px rgba(31, 84, 138, 0.25);
+  color: var(--ink);
+}
+.badge-logo svg {
+  position: absolute;
+  top: 22%; left: 22%; right: 22%; bottom: 22%;
+  width: 56%; height: 56%;
+}
+.badge-logo svg path { fill: currentColor; }
+.detail-head .badge-logo { box-shadow: 0 0 0 3px var(--surface-raised), 0 3px 8px rgba(31, 84, 138, 0.25); }
+
 .num-badge {
   display: inline-flex;
   align-items: center;

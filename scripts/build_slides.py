@@ -49,17 +49,29 @@ def e(text):
 
 
 def badge_icon(entity_or_glyph, color, size_class="", is_image_candidate=None):
-    """Render a badge-icon span. Falls back to a colored initial/glyph disc
-    until a real character image exists on disk at `image_path`."""
+    """Render a badge-icon span (character mascot, or a colored initial/glyph
+    disc fallback until real art exists). If the entity has a logo_path,
+    overlay the official service/company logo as a small corner badge —
+    the custom mascot stays the primary visual, the logo confirms who it is."""
+    inner = f'<span class="badge-icon {size_class}" style="background:{e(color)}">{e(entity_or_glyph)}</span>'
     if is_image_candidate is not None:
         img_path = ROOT / is_image_candidate["image_path"]
         if img_path.exists():
             rel = "../" + is_image_candidate["image_path"]
-            return (
+            inner = (
                 f'<span class="badge-icon {size_class}" '
                 f'style="background-image:url(\'{e(rel)}\'); background-color:{e(color)}"></span>'
             )
-    return f'<span class="badge-icon {size_class}" style="background:{e(color)}">{e(entity_or_glyph)}</span>'
+
+    if is_image_candidate is not None:
+        logo_path = is_image_candidate.get("logo_path")
+        if logo_path:
+            logo_file = ROOT / logo_path
+            if logo_file.exists():
+                logo_svg = logo_file.read_text(encoding="utf-8")
+                return f'<span class="badge-wrap">{inner}<span class="badge-logo">{logo_svg}</span></span>'
+
+    return inner
 
 
 def bg_attrs(background_path, extra_class=""):

@@ -56,6 +56,7 @@
     - "Vault/06 News/Claude Science.md"
   related: [gpt-model]
   image_path: assets/characters/models/claude.png
+  logo_path: assets/logos/claude-model.svg
   source_crop: references/model-claude-source-crop.png
   source_conversation: https://chatgpt.com/share/6a5c27f7-3ae8-83e8-8fd2-a88357276ef5
   generated_with: "ChatGPT (image-to-image from source_crop), 2026-07-19"
@@ -82,6 +83,7 @@
     - "Vault/06 News/GPT-5.6.md"
   related: [claude-model]
   image_path: assets/characters/models/gpt.png
+  logo_path: assets/logos/gpt-model.svg
   source_crop: references/model-gpt-source-crop.png
   generated_with: ""
   prompt: |
@@ -111,6 +113,7 @@
     - "Vault/06 News/Gemini 3.5 Flash、Computer Use統合.md"
   related: [claude-model, gpt-model]
   image_path: assets/characters/models/gemini.png
+  logo_path: assets/logos/gemini-model.svg
   source_crop: references/model-gemini-source-crop.png
   generated_with: ""
   prompt: |
@@ -138,6 +141,7 @@
     - "Vault/01 Concepts/Llama.md"
   related: [deepseek-model]
   image_path: assets/characters/models/llama.png
+  logo_path: assets/logos/llama-model.svg
   source_crop: references/model-llama-source-crop.png
   generated_with: ""
   prompt: |
@@ -162,6 +166,7 @@
   source_notes: []
   related: [llama-model]
   image_path: assets/characters/models/deepseek.png
+  logo_path: assets/logos/deepseek-model.svg
   generated_with: ""
   prompt: |
     Flat-shaded chibi mascot character illustration. A soft, rounded,
@@ -191,6 +196,7 @@
   related: [codex-devtool]
   family_of: claude-model
   image_path: assets/characters/devtools/claude-code.png
+  logo_path: assets/logos/claude-code-devtool.svg
   generated_with: ""
   prompt: |
     Flat-shaded chibi mascot character illustration. A soft, rounded,
@@ -221,6 +227,7 @@
   related: [claude-code-devtool]
   family_of: gpt-model
   image_path: assets/characters/devtools/codex.png
+  logo_path: assets/logos/codex-devtool.svg
   generated_with: ""
   prompt: |
     Flat-shaded chibi mascot character illustration. A soft, rounded,
@@ -249,6 +256,7 @@
     - "Vault/01 Concepts/Cursor.md"
   related: []
   image_path: assets/characters/devtools/cursor.png
+  logo_path: assets/logos/cursor-devtool.svg
   generated_with: ""
   prompt: |
     Flat-shaded chibi mascot character illustration. A soft, rounded,
@@ -282,6 +290,7 @@
   related: [chatgpt-chat, gemini-chat]
   family_of: claude-model
   image_path: assets/characters/chat/claude-chat.png
+  logo_path: assets/logos/claude-chat.svg
   generated_with: ""
   prompt: ""
 
@@ -300,6 +309,7 @@
   related: [claude-chat, gemini-chat]
   family_of: gpt-model
   image_path: assets/characters/chat/chatgpt-chat.png
+  logo_path: assets/logos/chatgpt-chat.svg
   generated_with: ""
   prompt: ""
 
@@ -318,6 +328,7 @@
   related: [claude-chat, chatgpt-chat]
   family_of: gemini-model
   image_path: assets/characters/chat/gemini-chat.png
+  logo_path: assets/logos/gemini-chat.svg
   generated_with: ""
   prompt: ""
 
@@ -338,6 +349,7 @@
     - "Vault/01 Concepts/GitHub.md"
   related: []
   image_path: assets/characters/tools/github.png
+  logo_path: assets/logos/github.svg
   generated_with: ""
   prompt: ""
 
@@ -353,6 +365,7 @@
     - "Vault/01 Concepts/Notion.md"
   related: []
   image_path: assets/characters/tools/notion.png
+  logo_path: assets/logos/notion.svg
   generated_with: ""
   prompt: ""
 
@@ -368,6 +381,7 @@
     - "Vault/01 Concepts/Slack.md"
   related: []
   image_path: assets/characters/tools/slack.png
+  logo_path: assets/logos/slack.svg
   generated_with: ""
   prompt: ""
 
@@ -383,6 +397,7 @@
     - "Vault/01 Concepts/Google Drive.md"
   related: []
   image_path: assets/characters/tools/google-drive.png
+  logo_path: assets/logos/google-drive.svg
   generated_with: ""
   prompt: ""
 
@@ -400,6 +415,7 @@
     - "Vault/01 Concepts/AWS.md"
   related: [azure, google-cloud]
   image_path: assets/characters/cloud/aws.png
+  logo_path: assets/logos/aws.svg
   generated_with: ""
   prompt: ""
 
@@ -415,6 +431,7 @@
     - "Vault/01 Concepts/Azure.md"
   related: [aws, google-cloud]
   image_path: assets/characters/cloud/azure.png
+  logo_path: assets/logos/azure.svg
   generated_with: ""
   prompt: ""
 
@@ -430,5 +447,6 @@
     - "Vault/01 Concepts/Google Cloud.md"
   related: [aws, azure]
   image_path: assets/characters/cloud/google-cloud.png
+  logo_path: assets/logos/google-cloud.svg
   generated_with: ""
   prompt: ""
