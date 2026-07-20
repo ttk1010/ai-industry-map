@@ -258,6 +258,21 @@ body { margin: 0; }
 .tile p, .pcard p.desc { font-size: clamp(10px, 1.25cqw, 13px); color: var(--ink-soft); margin: 0; line-height: 1.5; }
 .go-label { font-family: var(--font-mono); font-size: clamp(9px, 1cqw, 11px); color: var(--ink-faint); text-transform: uppercase; letter-spacing: 0.05em; }
 
+/* The functional category name (e.g. "AIモデル"), now secondary to the
+   whimsical world name (e.g. "AI頭脳学園") that carries the heading. */
+.area-tag {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.75em;
+  color: var(--ink-faint);
+  background: color-mix(in srgb, var(--ink) 8%, transparent);
+  border-radius: 999px;
+  padding: 0.15em 0.6em;
+  vertical-align: middle;
+  letter-spacing: 0.02em;
+}
+h1.title .area-tag { font-size: 0.32em; margin-left: 0.3em; }
+
 .pin-row { display: flex; align-items: center; gap: 6px; }
 .pin { width: 8px; height: 8px; border-radius: 50%; flex: none; }
 .pin.updated { background: var(--pin-updated); }

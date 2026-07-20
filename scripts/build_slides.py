@@ -87,6 +87,12 @@ def grid_cols_style(count, max_cols=6):
 AREA_TILE_COLORS = ["#FF9F43", "#4FC3F7", "#33B679", "#FF6B6B", "#B18AFF", "#FFD166"]
 
 
+def area_name(area):
+    """The area's front-and-center display name — the whimsical world name
+    (e.g. "AI頭脳学園") rather than the functional category ("AIモデル")."""
+    return area.get("world_name") or area["title"]
+
+
 def render_overview(world, areas):
     tiles = []
     for i, area in enumerate(areas):
@@ -95,17 +101,19 @@ def render_overview(world, areas):
         tiles.append(f"""
         <button class="tile" data-goto="page-area-{e(area['id'])}">
           {badge_icon(glyph, color)}
-          <h3>{e(area['title'])}</h3>
-          <p>{e(area.get('world_name', ''))} — {e(area['subtitle'])}</p>
+          <h3>{e(area_name(area))}</h3>
+          <p><span class="area-tag">{e(area['title'])}</span> {e(area['subtitle'])}</p>
           <span class="go-label">開く →</span>
         </button>""")
 
     cls, style, data_has_bg = bg_attrs(world.get("background_path"))
     grid_style = grid_cols_style(len(areas))
+    title = e(world.get("title", "AIの世界マップ"))
+    tagline = e(world.get("tagline", ""))
     return f"""
     <section class="{cls}" id="page-overview" data-title="全体像" data-parent=""{data_has_bg}{style}>
-      <h1 class="title">AI業界地図 — 全体像</h1>
-      <p class="lede">俯瞰図。各エリアをクリックすると一覧ページへ移動します。</p>
+      <h1 class="title">{title}</h1>
+      <p class="lede">{tagline}</p>
       <div class="tiles"{grid_style}>{''.join(tiles)}
       </div>
     </section>"""
@@ -131,11 +139,10 @@ def render_area_page(area, members, area_index, comparisons):
     )
 
     cls, style, data_has_bg = bg_attrs(area.get("background_path"))
-    world_name = area.get("world_name")
-    heading = f'<span class="num-badge">{glyph}</span>{e(area["title"])}' + (f" — {e(world_name)}" if world_name else "")
+    heading = f'<span class="num-badge">{glyph}</span>{e(area_name(area))} <span class="area-tag">{e(area["title"])}</span>'
     grid_style = grid_cols_style(len(members))
     return f"""
-    <section class="{cls}" id="page-area-{e(area['id'])}" data-title="{e(area['title'])}" data-parent="page-overview"{data_has_bg}{style}>
+    <section class="{cls}" id="page-area-{e(area['id'])}" data-title="{e(area_name(area))}" data-parent="page-overview"{data_has_bg}{style}>
       <h1 class="title">{heading}</h1>
       <p class="lede">{e(area['lede'])}</p>
       <div class="tiles"{grid_style}>{''.join(cards)}
@@ -165,7 +172,7 @@ def render_detail_page(entity, area, by_slug):
                 f'<a href="#" data-goto="page-{e(rel_slug)}">→ {e(rel["name"])}と比較する</a>'
             )
     related_links.append(
-        f'<a href="#" data-goto="page-area-{e(area["id"])}">→ {e(area["title"])}一覧に戻る</a>'
+        f'<a href="#" data-goto="page-area-{e(area["id"])}">→ {e(area_name(area))}へ戻る</a>'
     )
 
     # Detail pages reuse their parent area's background (one image per area,
@@ -177,7 +184,7 @@ def render_detail_page(entity, area, by_slug):
         {badge_icon(entity['name'][0], entity['brand_color'], size_class="", is_image_candidate=entity)}
         <div>
           <h1 class="title">{e(entity['name'])}</h1>
-          <span class="meta">{e(entity['org'])} ／ カテゴリ: {e(area['title'])}</span>
+          <span class="meta">{e(entity['org'])} ／ {e(area_name(area))}</span>
         </div>
       </div>
       <p class="lede">{e(entity['summary'])}</p>
@@ -219,7 +226,7 @@ def render_comparison_page(comp, area, by_slug):
         </table>
       </div>
       <div class="related">
-        <a href="#" data-goto="page-area-{e(area['id'])}">→ {e(area['title'])}一覧に戻る</a>
+        <a href="#" data-goto="page-area-{e(area['id'])}">→ {e(area_name(area))}へ戻る</a>
       </div>
     </section>"""
 
@@ -242,7 +249,7 @@ def build():
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>AI業界地図</title>
+<title>{e(world.get("title", "AIの世界マップ"))}</title>
 <link rel="stylesheet" href="../assets/css/deck.css">
 </head>
 <body>

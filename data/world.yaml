@@ -1,6 +1,8 @@
 # Overview-page ("world map") background. Regenerate only when the set of
 # regions itself changes (a region added/removed/renamed) — not on routine
 # data updates.
+title: AIの世界マップ
+tagline: いろんなAIやサービスが、あなたの毎日をサポート！
 background_path: assets/backgrounds/overview.png
 generated_with: ""
 background_prompt: |
