@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+body { margin: 0; background: #EDE9E0; }
+a { color: #2E96C7; } a:hover { color: #1F7BA6; }
+</style>
+</helmet>
+<x-import component-from-global-scope="deck-stage" from="./deck-stage.js" width="1920" height="1080" hint-size="100%,100%">
+
+<section data-label="表紙" data-speaker-notes="AI業界の全体像を5つのエリアに見立てて紹介するシリーズ。今日はその第一弾、AIモデル編。" style="background: #FDF4E4; font-family: 'Noto Sans JP', sans-serif; color: #3A3630; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 56px; overflow: hidden;">
+  <div style="position: absolute; top: -140px; left: -140px; width: 380px; height: 380px; border-radius: 50%; background: #F8E3C8;"></div>
+  <div style="position: absolute; bottom: -160px; right: -120px; width: 420px; height: 420px; border-radius: 50%; background: #F8E3C8;"></div>
+  <div style="position: absolute; top: 120px; right: 200px; width: 56px; height: 56px; border-radius: 50%; background: #F2A83C; opacity: 0.55;"></div>
+  <div style="position: absolute; top: 240px; left: 220px; width: 36px; height: 36px; border-radius: 50%; background: #35A7DB; opacity: 0.5;"></div>
+  <div style="position: absolute; bottom: 220px; left: 150px; width: 44px; height: 44px; border-radius: 50%; background: #2FA88C; opacity: 0.45;"></div>
+  <div style="display: flex; flex-direction: column; align-items: center; gap: 28px; z-index: 1;">
+    <div style="font-family: 'M PLUS Rounded 1c', sans-serif; font-weight: 700; font-size: 26px; letter-spacing: 0.18em; color: #FFFFFF; background: #35A7DB; padding: 10px 34px; border-radius: 999px;">AI INDUSTRY MAP</div>
+    <h1 style="margin: 0; font-family: 'M PLUS Rounded 1c', sans-serif; font-weight: 800; font-size: 110px; letter-spacing: 0.04em; color: #33302B;">AIの世界マップ</h1>
+    <p style="margin: 0; font-size: 34px; font-weight: 500; color: #6E675C;">いろんなAIやサービスが、あなたの毎日をサポート！</p>
+  </div>
+  <div style="display: flex; gap: 32px; z-index: 1;">
+    <div style="display: flex; flex-direction: column; align-items: center; gap: 14px;">
+      <div style="width: 176px; height: 160px; border-radius: 24px; overflow: hidden; background: #F7E8D2; box-shadow: 0 6px 18px rgba(120,90,40,0.14);"><img src="assets/claude-char.png" alt="Claude" style="width: 100%; height: 100%; object-fit: cover;"></div>
+      <span style="font-family: 'M PLUS Rounded 1c', sans-serif; font-weight: 700; font-size: 24px; color: #D97757;">Claude</span>
+    </div>
+    <div style="display: flex; flex-direction: column; align-items: center; gap: 14px;">
+      <div style="width: 176px; height: 160px; border-radius: 24px; overflow: hidden; background: #F7E8D2; box-shadow: 0 6px 18px rgba(120,90,40,0.14);"><img src="assets/gpt-char.png" alt="GPT" style="width: 100%; height: 100%; object-fit: cover;"></div>
+      <span style="font-family: 'M PLUS Rounded 1c', sans-serif; font-weight: 700; font-size: 24px; color: #5E9186;">GPT</span>
+    </div>
+    <div style="display: flex; flex-direction: column; align-items: center; gap: 14px;">
+      <div style="width: 176px; height: 160px; border-radius: 24px; overflow: hidden; background: #F7E8D2; box-shadow: 0 6px 18px rgba(120,90,40,0.14);"><img src="assets/gemini-char.png" alt="Gemini" style="width: 100%; height: 100%; object-fit: cover;"></div>
+      <span style="font-family: 'M PLUS Rounded 1c', sans-serif; font-weight: 700; font-size: 24px; color: #3186FF;">Gemini</span>
+    </div>
+    <div style="display: flex; flex-direction: column; align-items: center; gap: 14px;">
+      <div style="width: 176px; height: 160px; border-radius: 24px; overflow: hidden; background: #F7E8D2; box-shadow: 0 6px 18px rgba(120,90,40,0.14);"><img src="assets/llama-char.png" alt="Llama" style="width: 100%; height: 100%; object-fit: cover;"></div>
+      <span style="font-family: 'M PLUS Rounded 1c', sans-serif; font-weight: 700; font-size: 24px; color: #9B85C4;">Llama</span>
+    </div>
+    <div style="display: flex; flex-direction: column; align-items: center; gap: 14px;">
+      <div style="width: 176px; height: 160px; border-radius: 24px; background: #5B7FA6; box-shadow: 0 6px 18px rgba(120,90,40,0.14); display: flex; align-items: center; justify-content: center;"><img src="assets/logos/deepseek-model.svg" alt="DeepSeek" style="width: 84px; height: 84px; filter: brightness(0) invert(1);"></div>
+      <span style="font-family: 'M PLUS Rounded 1c', sans-serif; font-weight: 700; font-size: 24px; color: #5B7FA6;">DeepSeek</span>
+    </div>
+  </div>
+  <p style="margin: 0; font-size: 24px; font-weight: 500; color: #A0968A; z-index: 1;">第一弾：エリア① AI頭脳学園（AIモデル）編</p>
+</section>
+
+<section data-label="全体像" data-speaker-notes="AI業界を5つのエリアに分けて把握する。今日はこのうち①AI頭脳学園を深掘り。" style="background: #FBF9F3; font-family: 'Noto Sans JP', sans-serif; color: #3A3630; display: flex; flex-direction: column; padding: 84px 100px 80px; box-sizing: border-box; gap: 52px;">
+  <header style="display: flex; flex-direction: column; gap: 14px; border-left: 10px solid #35A7DB; padding-left: 36px;">
+    <div style="font-family: 'M PLUS Rounded 1c', sans-serif; font-weight: 700; font-size: 26px; letter-spacing: 0.12em; color: #35A7DB;">第1部 全体をつかむ — OVERVIEW</div>
+    <h2 style="margin: 0; font-family: 'M PLUS Rounded 1c', sans-serif; font-weight: 800; font-size: 62px; color: #33302B;">全体像：5つのエリア</h2>
+    <p style="margin: 0; font-size: 28px; color: #6E675C;">AI業界をひとつの「世界」に見立てると、大きく5つのエリアに分けられます。</p>
+  </header>
+  <div style="flex: 1; display: flex; flex-direction: column; gap: 28px;">
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 28px;">
+      <div style="position: relative; background: #FFFFFF; border: 3px solid #E8734A; border-radius: 24px; padding: 34px 36px; display: flex; flex-direction: column; gap: 16px; box-shadow: 0 4px 14px rgba(60,50,40,0.06);">
+        <sc-if value="{{ highlightArea1 }}" hint-placeholder-val="{{ true }}"><div style="position: absolute; top: -20px; right: 24px; background: #E8734A; color: #FFFFFF; font-family: 'M PLUS Rounded 1c', sans-serif; font-weight: 700; font-size: 22px; padding: 6px 20px; border-radius: 999px;">今日はここ！</div></sc-if>
+        <div style="display: flex; align-items: center; gap: 16px;">
+          <div style="width: 52px; height: 52px; border-radius: 50%; background: #E8734A; color: #FFFFFF; font-family: 'M PLUS Rounded 1c', sans-serif; font-weight: 800; font-size: 28px; display: flex; align-items: center; justify-content: center; flex: none;">①</div>
+          <h3 style="margin: 0; font-family: 'M PLUS Rounded 1c', sans-serif; font-weight: 800; font-size: 38px; color: #33302B;">AI頭脳学園</h3>
+        </div>
+        <div style="align-self: flex-start; font-size: 22px; font-weight: 700; color: #E8734A; background: #FBEAE2; padding: 4px 18px; border-radius: 999px;">AIモデル</div>
+        <p style="margin: 0; font-size: 24px; line-height: 1.6; color: #6E675C;">各社の基盤モデルの現在地</p>
+      </div>
+      <div style="background: #FFFFFF; border: 2px solid #EFE9DD; border-radius: 24px; padding: 34px 36px; display: flex; flex-direction: column; gap: 16px; box-shadow: 0 4px 14px rgba(60,50,40,0.06);">
+        <div style="display: flex; align-items: center; gap: 16px;">
+          <div style="width: 52px; height: 52px; border-radius: 50%; background: #F2A83C; color: #FFFFFF; font-family: 'M PLUS Rounded 1c', sans-serif; font-weight: 800; font-size: 28px; display: flex; align-items: center; justify-content: center; flex: none;">②</div>
+          <h3 style="margin: 0; font-family: 'M PLUS Rounded 1c', sans-serif; font-weight: 800; font-size: 38px; color: #33302B;">AIおしゃべり広場</h3>
+        </div>
+        <div style="align-self: flex-start; font-size: 22px; font-weight: 700; color: #C7842A; background: #FCF0DC; padding: 4px 18px; border-radius: 999px;">チャットアシスタント</div>
+        <p style="margin: 0; font-size: 24px; line-height: 1.6; color: #6E675C;">対話インターフェースとしてのAI</p>
+      </div>
+      <div style="background: #FFFFFF; border: 2px solid #EFE9DD; border-radius: 24px; padding: 34px 36px; display: flex; flex-direction: column; gap: 16px; box-shadow: 0 4px 14px rgba(60,50,40,0.06);">
+        <div style="display: flex; align-items: center; gap: 16px;">
+          <div style="width: 52px; height: 52px; border-radius: 50%; background: #35A7DB; color: #FFFFFF; font-family: 'M PLUS Rounded 1c', sans-serif; font-weight: 800; font-size: 28px; display: flex; align-items: center; justify-content: center; flex: none;">③</div>
+          <h3 style="margin: 0; font-family: 'M PLUS Rounded 1c', sans-serif; font-weight: 800; font-size: 38px; color: #33302B;">AI開発者タウン</h3>
+        </div>
+        <div style="align-self: flex-start; font-size: 22px; font-weight: 700; color: #2586B3; background: #E3F3FB; padding: 4px 18px; border-radius: 999px;">開発環境</div>
+        <p style="margin: 0; font-size: 24px; line-height: 1.6; color: #6E675C;">コーディングエージェント／IDEの現在地</p>
+      </div>
+    </div>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 28px; padding: 0 160px;">
+      <div style="background: #FFFFFF; border: 2px solid #EFE9DD; border-radius: 24px; padding: 34px 36px; display: flex; flex-direction: column; gap: 16px; box-shadow: 0 4px 14px rgba(60,50,40,0.06);">
+        <div style="display: flex; align-items: center; gap: 16px;">
+          <div style="width: 52px; height: 52px; border-radius: 50%; background: #2FA88C; color: #FFFFFF; font-family: 'M PLUS Rounded 1c', sans-serif; font-weight: 800; font-size: 28px; display: flex; align-items: center; justify-content: center; flex: none;">④</div>
+          <h3 style="margin: 0; font-family: 'M PLUS Rounded 1c', sans-serif; font-weight: 800; font-size: 38px; color: #33302B;">MCP港</h3>
+        </div>
+        <div style="align-self: flex-start; font-size: 22px; font-weight: 700; color: #23856E; background: #E1F4EE; padding: 4px 18px; border-radius: 999px;">ツール・サービス</div>
+        <p style="margin: 0; font-size: 24px; line-height: 1.6; color: #6E675C;">いろんな道具・サービスとの連携</p>
+      </div>
+      <div style="background: #FFFFFF; border: 2px solid #EFE9DD; border-radius: 24px; padding: 34px 36px; display: flex; flex-direction: column; gap: 16px; box-shadow: 0 4px 14px rgba(60,50,40,0.06);">
+        <div style="display: flex; align-items: center; gap: 16px;">
+          <div style="width: 52px; height: 52px; border-radius: 50%; background: #8B7BC7; color: #FFFFFF; font-family: 'M PLUS Rounded 1c', sans-serif; font-weight: 800; font-size: 28px; display: flex; align-items: center; justify-content: center; flex: none;">⑤</div>
+          <h3 style="margin: 0; font-family: 'M PLUS Rounded 1c', sans-serif; font-weight: 800; font-size: 38px; color: #33302B;">クラウド王国</h3>
+        </div>
+        <div style="align-self: flex-start; font-size: 22px; font-weight: 700; color: #6F5FAF; background: #EEEAF8; padding: 4px 18px; border-radius: 999px;">クラウド</div>
+        <p style="margin: 0; font-size: 24px; line-height: 1.6; color: #6E675C;">裏方で支えるインターネットの世界</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-label="モデル一覧" data-speaker-notes="AI頭脳学園の主要5モデル。ブランドカラーとキャラクターで覚えてもらう。Claudeはこのあと個別ページで深掘り。" style="background: #FBF9F3; font-family: 'Noto Sans JP', sans-serif; color: #3A3630; display: flex; flex-direction: column; padding: 84px 100px 80px; box-sizing: border-box; gap: 48px;">
+  <header style="display: flex; flex-direction: column; gap: 14px; border-left: 10px solid #35A7DB; padding-left: 36px;">
+    <div style="font-family: 'M PLUS Rounded 1c', sans-serif; font-weight: 700; font-size: 26px; letter-spacing: 0.12em; color: #35A7DB;">第2部 エリア① AI頭脳学園 — MODELS</div>
+    <h2 style="margin: 0; font-family: 'M PLUS Rounded 1c', sans-serif; font-weight: 800; font-size: 62px; color: #33302B;">AI頭脳学園：主要5モデル</h2>
+    <p style="margin: 0; font-size: 28px; color: #6E675C;">各社の基盤モデルたち。それぞれに得意分野とキャラクターがあります。</p>
+  </header>
+  <div style="flex: 1; display: grid; grid-template-columns: repeat(5, 1fr); gap: 26px;">
+    <div style="background: #FFFFFF; border-radius: 24px; border-top: 10px solid #D97757; box-shadow: 0 4px 14px rgba(60,50,40,0.06); padding: 28px 26px; display: flex; flex-direction: column; gap: 18px;">
+      <div style="height: 200px; border-radius: 18px; overflow: hidden; background: #F9EDE0;"><img src="assets/claude-char.png" alt="Claude" style="width: 100%; height: 100%; object-fit: cover;"></div>
+      <div style="display: flex; flex-direction: column; gap: 8px;">
+        <h3 style="margin: 0; font-family: 'M PLUS Rounded 1c', sans-serif; font-weight: 800; font-size: 40px; color: #D97757;">Claude</h3>
+        <span style="font-size: 23px; font-weight: 700; color: #8A8072;">Anthropic</span>
+      </div>
+      <p style="margin: 0; font-size: 24px; line-height: 1.62; color: #55503F;">推論と長文コンテキストに強み。Sonnet／Opus／Haikuの三段構成</p>
+    </div>
+    <div style="background: #FFFFFF; border-radius: 24px; border-top: 10px solid #74AA9C; box-shadow: 0 4px 14px rgba(60,50,40,0.06); padding: 28px 26px; display: flex; flex-direction: column; gap: 18px;">
+      <div style="height: 200px; border-radius: 18px; overflow: hidden; background: #EAF2EE;"><img src="assets/gpt-char.png" alt="GPT" style="width: 100%; height: 100%; object-fit: cover;"></div>
+      <div style="display: flex; flex-direction: column; gap: 8px;">
+        <h3 style="margin: 0; font-family: 'M PLUS Rounded 1c', sans-serif; font-weight: 800; font-size: 40px; color: #5E9186;">GPT</h3>
+        <span style="font-size: 23px; font-weight: 700; color: #8A8072;">OpenAI</span>
+      </div>
+      <p style="margin: 0; font-size: 24px; line-height: 1.62; color: #55503F;">汎用性とマルチモーダルの王道。ChatGPTとAPIエコシステム</p>
+    </div>
+    <div style="background: #FFFFFF; border-radius: 24px; border-top: 10px solid #3186FF; box-shadow: 0 4px 14px rgba(60,50,40,0.06); padding: 28px 26px; display: flex; flex-direction: column; gap: 18px;">
+      <div style="height: 200px; border-radius: 18px; overflow: hidden; background: #E7F0FC;"><img src="assets/gemini-char.png" alt="Gemini" style="width: 100%; height: 100%; object-fit: cover;"></div>
+      <div style="display: flex; flex-direction: column; gap: 8px;">
+        <h3 style="margin: 0; font-family: 'M PLUS Rounded 1c', sans-serif; font-weight: 800; font-size: 40px; color: #3186FF;">Gemini</h3>
+        <span style="font-size: 23px; font-weight: 700; color: #8A8072;">Google</span>
+      </div>
+      <p style="margin: 0; font-size: 24px; line-height: 1.62; color: #55503F;">Google製品群へのネイティブ統合。Computer Use系を強化中</p>
+    </div>
+    <div style="background: #FFFFFF; border-radius: 24px; border-top: 10px solid #BBA9D6; box-shadow: 0 4px 14px rgba(60,50,40,0.06); padding: 28px 26px; display: flex; flex-direction: column; gap: 18px;">
+      <div style="height: 200px; border-radius: 18px; overflow: hidden; background: #F0ECF7;"><img src="assets/llama-char.png" alt="Llama" style="width: 100%; height: 100%; object-fit: cover;"></div>
+      <div style="display: flex; flex-direction: column; gap: 8px;">
+        <h3 style="margin: 0; font-family: 'M PLUS Rounded 1c', sans-serif; font-weight: 800; font-size: 40px; color: #9B85C4;">Llama</h3>
+        <span style="font-size: 23px; font-weight: 700; color: #8A8072;">Meta</span>
+      </div>
+      <p style="margin: 0; font-size: 24px; line-height: 1.62; color: #55503F;">オープンウェイトの主流。自前ホスティング・微調整の土台</p>
+    </div>
+    <div style="background: #FFFFFF; border-radius: 24px; border-top: 10px solid #5B7FA6; box-shadow: 0 4px 14px rgba(60,50,40,0.06); padding: 28px 26px; display: flex; flex-direction: column; gap: 18px;">
+      <div style="height: 200px; border-radius: 18px; background: #5B7FA6; display: flex; align-items: center; justify-content: center;"><img src="assets/logos/deepseek-model.svg" alt="DeepSeek" style="width: 96px; height: 96px; filter: brightness(0) invert(1);"></div>
+      <div style="display: flex; flex-direction: column; gap: 8px;">
+        <h3 style="margin: 0; font-family: 'M PLUS Rounded 1c', sans-serif; font-weight: 800; font-size: 40px; color: #5B7FA6;">DeepSeek</h3>
+        <span style="font-size: 23px; font-weight: 700; color: #8A8072;">DeepSeek</span>
+      </div>
+      <p style="margin: 0; font-size: 24px; line-height: 1.62; color: #55503F;">低コスト・高性能を追うオープン系。価格破壊のたび勢力図が揺れる</p>
+    </div>
+  </div>
+</section>
+
+<section data-label="比較表" data-speaker-notes="商用3モデルの使い分け。結論は最下段の「こんな時に」。" style="background: #FBF9F3; font-family: 'Noto Sans JP', sans-serif; color: #3A3630; display: flex; flex-direction: column; padding: 84px 100px 76px; box-sizing: border-box; gap: 40px;">
+  <header style="display: flex; flex-direction: column; gap: 14px; border-left: 10px solid #35A7DB; padding-left: 36px;">
+    <div style="font-family: 'M PLUS Rounded 1c', sans-serif; font-weight: 700; font-size: 26px; letter-spacing: 0.12em; color: #35A7DB;">第2部 エリア① AI頭脳学園 — COMPARISON</div>
+    <h2 style="margin: 0; font-family: 'M PLUS Rounded 1c', sans-serif; font-weight: 800; font-size: 62px; color: #33302B;">主要モデル比較：GPT・Claude・Gemini</h2>
+  </header>
+  <table style="flex: 1; width: 100%; border-collapse: separate; border-spacing: 0; background: #FFFFFF; border-radius: 24px; overflow: hidden; box-shadow: 0 4px 14px rgba(60,50,40,0.06); font-size: 24px;">
+    <thead>
+      <tr>
+        <th style="width: 250px; background: #F2EDE2; padding: 16px 26px; text-align: left; font-family: 'M PLUS Rounded 1c', sans-serif; font-size: 26px; color: #6E675C;">観点</th>
+        <th style="background: #D97757; color: #FFFFFF; padding: 16px 26px; text-align: left;"><div style="display: flex; align-items: center; gap: 14px;"><img src="assets/claude-char.png" alt="" style="width: 52px; height: 48px; border-radius: 12px; object-fit: cover;"><span style="font-family: 'M PLUS Rounded 1c', sans-serif; font-weight: 800; font-size: 32px;">Claude</span></div></th>
+        <th style="background: #74AA9C; color: #FFFFFF; padding: 16px 26px; text-align: left;"><div style="display: flex; align-items: center; gap: 14px;"><img src="assets/gpt-char.png" alt="" style="width: 52px; height: 48px; border-radius: 12px; object-fit: cover;"><span style="font-family: 'M PLUS Rounded 1c', sans-serif; font-weight: 800; font-size: 32px;">GPT</span></div></th>
+        <th style="background: #3186FF; color: #FFFFFF; padding: 16px 26px; text-align: left;"><div style="display: flex; align-items: center; gap: 14px;"><img src="assets/gemini-char.png" alt="" style="width: 52px; height: 48px; border-radius: 12px; object-fit: cover;"><span style="font-family: 'M PLUS Rounded 1c', sans-serif; font-weight: 800; font-size: 32px;">Gemini</span></div></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="padding: 13px 26px; font-weight: 700; color: #6E675C; border-bottom: 2px solid #F2EDE2; background: #FBF8F1;">主な強み</td>
+        <td style="padding: 13px 26px; border-bottom: 2px solid #F2EDE2; line-height: 1.5;">長文処理・要約</td>
+        <td style="padding: 13px 26px; border-bottom: 2px solid #F2EDE2; line-height: 1.5;">汎用性・開発者エコシステム</td>
+        <td style="padding: 13px 26px; border-bottom: 2px solid #F2EDE2; line-height: 1.5;">Google連携・マルチモーダル</td>
+      </tr>
+      <tr>
+        <td style="padding: 13px 26px; font-weight: 700; color: #6E675C; border-bottom: 2px solid #F2EDE2; background: #FBF8F1;">長文コンテキスト</td>
+        <td style="padding: 13px 26px; border-bottom: 2px solid #F2EDE2; line-height: 1.5;">非常に大きい</td>
+        <td style="padding: 13px 26px; border-bottom: 2px solid #F2EDE2; line-height: 1.5;">大きい</td>
+        <td style="padding: 13px 26px; border-bottom: 2px solid #F2EDE2; line-height: 1.5;">非常に大きい</td>
+      </tr>
+      <tr>
+        <td style="padding: 13px 26px; font-weight: 700; color: #6E675C; border-bottom: 2px solid #F2EDE2; background: #FBF8F1;">マルチモーダル対応</td>
+        <td style="padding: 13px 26px; border-bottom: 2px solid #F2EDE2; line-height: 1.5;">対応あり</td>
+        <td style="padding: 13px 26px; border-bottom: 2px solid #F2EDE2; line-height: 1.5;">強い</td>
+        <td style="padding: 13px 26px; border-bottom: 2px solid #F2EDE2; line-height: 1.5;">強い</td>
+      </tr>
+      <tr>
+        <td style="padding: 13px 26px; font-weight: 700; color: #6E675C; border-bottom: 2px solid #F2EDE2; background: #FBF8F1;">コード支援</td>
+        <td style="padding: 13px 26px; border-bottom: 2px solid #F2EDE2; line-height: 1.5;">強い</td>
+        <td style="padding: 13px 26px; border-bottom: 2px solid #F2EDE2; line-height: 1.5;">強い</td>
+        <td style="padding: 13px 26px; border-bottom: 2px solid #F2EDE2; line-height: 1.5;">強い</td>
+      </tr>
+      <tr>
+        <td style="padding: 13px 26px; font-weight: 700; color: #6E675C; border-bottom: 2px solid #F2EDE2; background: #FBF8F1;">エコシステム普及</td>
+        <td style="padding: 13px 26px; border-bottom: 2px solid #F2EDE2; line-height: 1.5;">広い</td>
+        <td style="padding: 13px 26px; border-bottom: 2px solid #F2EDE2; line-height: 1.5;">非常に広い</td>
+        <td style="padding: 13px 26px; border-bottom: 2px solid #F2EDE2; line-height: 1.5;">広い</td>
+      </tr>
+      <tr>
+        <td style="padding: 13px 26px; font-weight: 700; color: #6E675C; border-bottom: 2px solid #F2EDE2; background: #FBF8F1;">クラウド／業務連携</td>
+        <td style="padding: 13px 26px; border-bottom: 2px solid #F2EDE2; line-height: 1.5;">API中心</td>
+        <td style="padding: 13px 26px; border-bottom: 2px solid #F2EDE2; line-height: 1.5;">Microsoft／Azure中心</td>
+        <td style="padding: 13px 26px; border-bottom: 2px solid #F2EDE2; line-height: 1.5;">Google Cloud／Workspace中心</td>
+      </tr>
+      <tr>
+        <td style="padding: 13px 26px; font-weight: 700; color: #6E675C; border-bottom: 2px solid #F2EDE2; background: #FBF8F1;">得意な利用場面</td>
+        <td style="padding: 13px 26px; border-bottom: 2px solid #F2EDE2; line-height: 1.5;">長文分析・文書作業</td>
+        <td style="padding: 13px 26px; border-bottom: 2px solid #F2EDE2; line-height: 1.5;">汎用アプリ開発</td>
+        <td style="padding: 13px 26px; border-bottom: 2px solid #F2EDE2; line-height: 1.5;">Google基盤の組み込み</td>
+      </tr>
+      <tr>
+        <td style="padding: 13px 26px; font-weight: 700; color: #6E675C; border-bottom: 2px solid #F2EDE2; background: #FBF8F1;">注意点</td>
+        <td style="padding: 13px 26px; border-bottom: 2px solid #F2EDE2; line-height: 1.5;">地域・提供差がある</td>
+        <td style="padding: 13px 26px; border-bottom: 2px solid #F2EDE2; line-height: 1.5;">モデル差が大きい</td>
+        <td style="padding: 13px 26px; border-bottom: 2px solid #F2EDE2; line-height: 1.5;">製品名／系統が変わりやすい</td>
+      </tr>
+      <tr>
+        <td style="padding: 15px 26px; font-weight: 700; color: #33302B; background: #FCF0DC;">こんな時に</td>
+        <td style="padding: 15px 26px; background: #FDF6ED; line-height: 1.55; font-weight: 500;">長文の読解・要約・文書作業を重視するなら候補</td>
+        <td style="padding: 15px 26px; background: #FDF6ED; line-height: 1.55; font-weight: 500;">汎用API・豊富なSDK・実績重視なら第一候補</td>
+        <td style="padding: 15px 26px; background: #FDF6ED; line-height: 1.55; font-weight: 500;">Google Cloud／Workspace統合や画像処理を重視するなら候補</td>
+      </tr>
+    </tbody>
+  </table>
+  <sc-if value="{{ showSources }}" hint-placeholder-val="{{ true }}"><p style="margin: 0; font-size: 20px; color: #A0968A;">出典：Vault/04 Comparisons/LLM比較- GPT・Claude・Gemini.md</p></sc-if>
+</section>
+
+<section data-label="Claude個別" data-speaker-notes="個別ページのレイアウト例。キャラクター左・テキスト右。4ラインナップの使い分けまで紹介。" style="background: #FBF9F3; font-family: 'Noto Sans JP', sans-serif; color: #3A3630; display: flex; flex-direction: column; padding: 84px 100px 76px; box-sizing: border-box; gap: 44px;">
+  <header style="display: flex; flex-direction: column; gap: 14px; border-left: 10px solid #35A7DB; padding-left: 36px;">
+    <div style="font-family: 'M PLUS Rounded 1c', sans-serif; font-weight: 700; font-size: 26px; letter-spacing: 0.12em; color: #35A7DB;">第2部 エリア① AI頭脳学園 — PROFILE</div>
+    <h2 style="margin: 0; font-family: 'M PLUS Rounded 1c', sans-serif; font-weight: 800; font-size: 62px; color: #33302B;">モデル紹介：Claude</h2>
+  </header>
+  <div style="flex: 1; display: flex; gap: 56px; min-height: 0;">
+    <div style="width: 620px; flex: none; border-radius: 28px; background: linear-gradient(180deg, #F9E9D8, #F4DCC4); display: flex; align-items: flex-end; justify-content: center; overflow: hidden; box-shadow: 0 4px 14px rgba(60,50,40,0.06);">
+      <img src="assets/claude-char.png" alt="Claudeのキャラクター：丸メガネの茶色いふわふわ生物" style="width: 92%; height: 96%; object-fit: contain; object-position: bottom;">
+    </div>
+    <div style="flex: 1; display: flex; flex-direction: column; gap: 30px; justify-content: center;">
+      <div style="display: flex; align-items: center; gap: 22px;">
+        <h3 style="margin: 0; font-family: 'M PLUS Rounded 1c', sans-serif; font-weight: 800; font-size: 80px; color: #D97757;">Claude</h3>
+        <span style="font-size: 26px; font-weight: 700; color: #D97757; background: #FBEAE2; padding: 8px 24px; border-radius: 999px;">Anthropic</span>
+      </div>
+      <p style="margin: 0; font-size: 30px; line-height: 1.7; color: #55503F;">推論と長文コンテキストに強み。Sonnet／Opus／Haiku の三段構成でコスト対応力を確保。</p>
+      <div style="display: flex; flex-direction: column; gap: 16px;">
+        <h4 style="margin: 0; font-family: 'M PLUS Rounded 1c', sans-serif; font-weight: 800; font-size: 28px; color: #33302B;">ラインナップ</h4>
+        <div style="display: flex; align-items: center; gap: 20px; background: #FFFFFF; border-radius: 18px; padding: 16px 26px; box-shadow: 0 3px 10px rgba(60,50,40,0.05);">
+          <span style="flex: none; width: 190px; font-family: 'M PLUS Rounded 1c', sans-serif; font-weight: 800; font-size: 26px; color: #D97757;">Haiku 4.5</span>
+          <span style="font-size: 24px; color: #55503F;">最軽量・低コスト</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 20px; background: #FFFFFF; border-radius: 18px; padding: 16px 26px; box-shadow: 0 3px 10px rgba(60,50,40,0.05);">
+          <span style="flex: none; width: 190px; font-family: 'M PLUS Rounded 1c', sans-serif; font-weight: 800; font-size: 26px; color: #D97757;">Sonnet 5</span>
+          <span style="font-size: 24px; color: #55503F;">汎用バランス</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 20px; background: #FFFFFF; border-radius: 18px; padding: 16px 26px; box-shadow: 0 3px 10px rgba(60,50,40,0.05);">
+          <span style="flex: none; width: 190px; font-family: 'M PLUS Rounded 1c', sans-serif; font-weight: 800; font-size: 26px; color: #D97757;">Opus 4.8</span>
+          <span style="font-size: 24px; color: #55503F;">最高性能</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 20px; background: #FFFFFF; border-radius: 18px; padding: 16px 26px; box-shadow: 0 3px 10px rgba(60,50,40,0.05);">
+          <span style="flex: none; width: 190px; font-family: 'M PLUS Rounded 1c', sans-serif; font-weight: 800; font-size: 26px; color: #D97757;">Fable 5</span>
+          <span style="font-size: 24px; color: #55503F;">対話・創作寄り（要検証）</span>
+        </div>
+      </div>
+      <sc-if value="{{ showSources }}" hint-placeholder-val="{{ true }}"><p style="margin: 0; font-size: 20px; color: #A0968A;">出典：Vault/01 Concepts/Claude.md ／ Vault/06 News/Claude Science.md</p></sc-if>
+    </div>
+  </div>
+</section>
+
+</x-import>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;highlightArea1&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;表示&quot;},
+  &quot;showSources&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;表示&quot;}
+}">
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      highlightArea1: this.props.highlightArea1 ?? true,
+      showSources: this.props.showSources ?? true,
+    };
+  }
+}
+</script>
+</body>
+</html>
