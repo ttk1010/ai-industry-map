@@ -21,7 +21,7 @@
   title: AIモデル
   world_name: AI頭脳学園
   subtitle: 基盤モデルの現在地
-  lede: 各社の基盤モデル。カードの色はニュース連動ステータス（更新あり/安定/要ウォッチ）を示す。
+  lede: 各社の基盤モデルの現在地。
   background_path: assets/backgrounds/models.png
   generated_with: ""
   background_prompt: |

@@ -2,7 +2,7 @@
 """Render data/{world,areas,characters}.yaml into slides/index.html.
 
 Re-run this after editing the yaml data files, adding a character/background
-image, or updating a status/version field. Requires PyYAML:
+image, or updating a version field. Requires PyYAML:
     uv run --with pyyaml python3 scripts/build_slides.py
 """
 import html
@@ -15,12 +15,6 @@ DATA_DIR = ROOT / "data"
 OUT_PATH = ROOT / "slides" / "index.html"
 
 CIRCLED_DIGITS = "①②③④⑤⑥⑦⑧⑨⑩"
-
-STATUS_LABELS = {
-    "updated": "Updated",
-    "stable": "Stable",
-    "watch": "Watch",
-}
 
 
 def load_data():
@@ -136,8 +130,7 @@ def render_area_page(area, members, area_index, comparisons):
     cards = []
     for m in members:
         cards.append(f"""
-        <button class="pcard {e(m['status'])}" data-goto="page-{e(m['slug'])}">
-          <div class="pin-row"><span class="pin {e(m['status'])}"></span><span class="pin-label">{e(STATUS_LABELS.get(m['status'], m['status']))}</span></div>
+        <button class="pcard" data-goto="page-{e(m['slug'])}">
           {badge_icon(m['name'][0], m['brand_color'], is_image_candidate=m)}
           <h3>{e(m['name'])}</h3>
           <p class="desc">{e(m['org'])} — {e(m['summary'])}</p>
@@ -172,7 +165,6 @@ def render_detail_page(entity, area, by_slug):
             rows.append(f'<div class="row"><span>{e(v["name"])}</span><span>{e(v["tagline"])}</span></div>')
     elif entity.get("version"):
         rows.append(f'<div class="row"><span>バージョン</span><span>{e(entity["version"])}</span></div>')
-    rows.append(f'<div class="row"><span>ステータス</span><span>{e(entity["status_label"])}</span></div>')
     for note in entity.get("source_notes") or []:
         rows.append(f'<div class="row"><span>出典</span><span>{e(note)}</span></div>')
 

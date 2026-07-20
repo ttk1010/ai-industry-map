@@ -48,8 +48,6 @@
       tagline: 最高性能。複雑な推論や長時間の自律タスク向け
     - name: Fable 5
       tagline: "（要確認・仮）対話や創作寄りの特化モデルという理解"
-  status: updated
-  status_label: 直近ニュースあり（07月更新）
   summary: 推論と長文コンテキストに強み。Sonnet / Opus / Haiku の三段構成でコスト対応力を確保。
   source_notes:
     - "Vault/01 Concepts/Claude.md"
@@ -75,8 +73,6 @@
   brand_color: "#74AA9C"
   accessory: 光の粒
   version: "GPT-5.6"
-  status: updated
-  status_label: 直近ニュースあり（07月更新）
   summary: 汎用性とマルチモーダルの王道。ChatGPT と API エコシステムの両輪で市場を牽引。
   source_notes:
     - "Vault/01 Concepts/GPT.md"
@@ -105,8 +101,6 @@
   brand_color: "#3186FF"
   accessory: 双子の星
   version: "3.5 Flash"
-  status: updated
-  status_label: 直近ニュースあり（07月更新）
   summary: Google製品群へのネイティブ統合。Computer Use 系の操作能力を急速に強化中。
   source_notes:
     - "Vault/01 Concepts/Gemini.md"
@@ -134,8 +128,6 @@
   brand_color: "#BBA9D6"
   accessory: 作業着とハンマー
   version: "4 系"
-  status: stable
-  status_label: 安定運用・変化なし
   summary: オープンウェイトの主流。自前ホスティングや微調整の土台として定番の地位を維持。
   source_notes:
     - "Vault/01 Concepts/Llama.md"
@@ -160,8 +152,6 @@
   brand_color: "#5B7FA6"
   accessory: 虫眼鏡
   version: "V4 系"
-  status: watch
-  status_label: 要ウォッチ
   summary: 低コスト・高性能を追う代表的なオープン系モデル。価格破壊のたびに勢力図を揺らす存在。
   source_notes: []
   related: [llama-model]
@@ -188,8 +178,6 @@
   brand_color: "#D97757"
   accessory: 工房エプロン
   version: "Sonnet 5 駆動"
-  status: stable
-  status_label: 安定運用・変化なし
   summary: ターミナル常駐のエージェント型CLI。大規模改修や自律的な複数ステップ作業に強い。
   source_notes:
     - "Vault/01 Concepts/Claude Code.md"
@@ -218,8 +206,6 @@
   brand_color: "#74AA9C"
   accessory: 幾何学ボディ
   version: "— 系"
-  status: updated
-  status_label: 直近ニュースあり（07月更新）
   summary: OpenAI版のコーディングエージェント。ChatGPTとの連携やクラウド実行の統合が深い。
   source_notes:
     - "Vault/01 Concepts/Codex.md"
@@ -249,8 +235,6 @@
   brand_color: "#1A1A1A"
   accessory: カーソル尾
   version: "— 系"
-  status: stable
-  status_label: 安定運用・変化なし
   summary: VS Code フォークのAIネイティブエディタ。補完とチャットの統合体験が滑らか。
   source_notes:
     - "Vault/01 Concepts/Cursor.md"
@@ -282,8 +266,6 @@
   brand_color: "#D97757"
   accessory: コーヒーカップ
   version: "Claude.ai"
-  status: updated
-  status_label: 直近ニュースあり（07月更新）
   summary: Anthropicの対話インターフェース。Claude.aiとして提供され、質問応答・要約・文章作成などをチャット形式で行える。
   source_notes:
     - "Vault/01 Concepts/Claude.md"
@@ -301,8 +283,6 @@
   brand_color: "#74AA9C"
   accessory: コーヒーカップ
   version: "chat.openai.com"
-  status: updated
-  status_label: 直近ニュースあり（07月更新）
   summary: OpenAIの対話型チャットボット。自然な会話で質問応答・文章作成・要約・翻訳・アイデア出しなどをこなす、最も広く使われるAIチャット。
   source_notes:
     - "Vault/01 Concepts/ChatGPT.md"
@@ -320,8 +300,6 @@
   brand_color: "#3186FF"
   accessory: コーヒーカップ
   version: "gemini.google.com"
-  status: updated
-  status_label: 直近ニュースあり（07月更新）
   summary: Googleの対話アシスタント。検索・Workspace・Androidと連携し、テキスト以外に画像なども扱えるマルチモーダルな対話が特徴。
   source_notes:
     - "Vault/01 Concepts/Gemini.md"
@@ -342,8 +320,6 @@
   org: GitHub
   category: tools
   brand_color: "#181717"
-  status: stable
-  status_label: 安定運用・変化なし
   summary: コードのバージョン管理・共有プラットフォーム。個人の学習からOSS・企業開発まで、AIコーディングツールの共通の置き場所。
   source_notes:
     - "Vault/01 Concepts/GitHub.md"
@@ -358,8 +334,6 @@
   org: Notion
   category: tools
   brand_color: "#191919"
-  status: stable
-  status_label: 安定運用・変化なし
   summary: メモ・文書・タスク管理・DBを1つにまとめるワークスペース。AI連携での情報整理の自動化が進む。
   source_notes:
     - "Vault/01 Concepts/Notion.md"
@@ -374,8 +348,6 @@
   org: Slack
   category: tools
   brand_color: "#4A154B"
-  status: stable
-  status_label: 安定運用・変化なし
   summary: チーム向けチャットツール。チャンネル単位の会話整理と、AIボット連携での自動化が広がる。
   source_notes:
     - "Vault/01 Concepts/Slack.md"
@@ -390,8 +362,6 @@
   org: Google
   category: tools
   brand_color: "#0F9D58"
-  status: stable
-  status_label: 安定運用・変化なし
   summary: Googleのクラウドストレージ。文書類の保存・共同編集の基盤で、AIによる要約・検索の対象にもなる。
   source_notes:
     - "Vault/01 Concepts/Google Drive.md"
@@ -408,8 +378,6 @@
   org: Amazon
   category: cloud
   brand_color: "#FF9900"
-  status: stable
-  status_label: 安定運用・変化なし
   summary: Amazonのクラウド基盤。サーバー・DB・AI関連サービスを従量課金で利用でき、多くのAIサービスの裏側を支える。
   source_notes:
     - "Vault/01 Concepts/AWS.md"
@@ -424,8 +392,6 @@
   org: Microsoft
   category: cloud
   brand_color: "#0078D4"
-  status: stable
-  status_label: 安定運用・変化なし
   summary: Microsoftのクラウド基盤。OpenAIモデルの主要な提供経路の一つで、企業向けAI導入の中心的存在。
   source_notes:
     - "Vault/01 Concepts/Azure.md"
@@ -440,8 +406,6 @@
   org: Google
   category: cloud
   brand_color: "#4285F4"
-  status: stable
-  status_label: 安定運用・変化なし
   summary: Googleのクラウド基盤。Gemini等の自社AIモデルとネイティブに統合され、データ分析・機械学習基盤としても利用される。
   source_notes:
     - "Vault/01 Concepts/Google Cloud.md"
